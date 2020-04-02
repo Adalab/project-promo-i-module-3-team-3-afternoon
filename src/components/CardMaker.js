@@ -1,5 +1,5 @@
 import React from 'react';
-// import Preview from './Preview';
+import Preview from './Preview';
 // import Design from './Design';
 // import Fill from './Fill';
 // import Share from './Share';
