@@ -13,7 +13,7 @@
   }
   
   .preview {
-    background: url("../images/shiny.jpg") top center no-repeat;
+    background: url("../../images/shiny.jpg") top center no-repeat;
     background-size: cover;
     height: 80vh;
     display: flex;
@@ -104,17 +104,22 @@
           margin-bottom: 0px;
         }
       }
+
+      .inputImage{
+        width: 100% ;
       .image {
         display: flex;
         justify-content: center;
         align-items: center;
         .profile__image {
-        background: url("../images/queen.gif") top center no-repeat;
+        background-image: url('../../images/queen.gif') top center no-repeat;
         background-size: cover;
         width: 240px;
         height: 200px;
         }
       }
+    }
+      
     }
   }
   

@@ -1,45 +1,46 @@
 import React from 'react';
 import Preview from './Preview';
 // import Design from './Design';
-import Fill from './FormFill';
+// import Fill from './Fill';
 // import Share from './Share';
-import defaultImage from '../images/queen.gif';
+import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
-import '../stylesheets/App.scss';
 
 
 class CardMaker extends React.Component {
     constructor(props) {
         super(props);
     }
-    //body//
-}
 
-resetForm(){
-    this.setState({
-        open: 'design',
-        userInfo: {
-            "palette": '1',
-            "name": '',
-            "job": '',
-            "phone": '',
-            "email": '',
-            "linkedin": '',
-            "github": '',
-            "photo": defaultImage
-        },
-        isAvatarDefault: true,
-        profile: {
-          avatar: defaultImage
-        },
-        validUserName: '',
-        validPosition: '',
-        validAvatar: '',
-        validEmail: '',
-        validLinkedin: '',
-        validGithub: '',
-        isFormValid:''
-    })
-}
+    render() {
+              return (
+            <main className="main">
+
+    <Preview
+                    // userName={userInfo.name}
+                    // position={userInfo.job}
+                    // paletteValue={userInfo.palette}
+                    // email={userInfo.email}
+                    // phone={userInfo.phone}
+                    // linkedin={userInfo.linkedin}
+                    // github={userInfo.github}
+                    // avatar={profile.avatar} 
+                    // resetForm={this.resetForm}
+
+                    userName='Nombre Apellidos'
+                    position='Front End Developer'
+                    paletteValue=''
+                    email='asdasd@dfs.com'
+                    phone='6666666'
+                    linkedin='{userInfo.linkedin}'
+                    github='{userInfo.github}'
+                    avatar='{profile.avatar} '
+                    resetForm='{this.resetForm}'
+                />
+                </main>
+                )
+                }
+                }
+
 
 export default CardMaker;
