@@ -10,7 +10,7 @@ class LandingMain extends React.Component {
             src={this.props.image}
             alt="logo"
             title="logo awesome profile-cards"
-          ></img>
+          />
         </header>
 
         <main className="main">
