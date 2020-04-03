@@ -1,7 +1,7 @@
 import React from 'react';
 import Preview from './Preview';
 // import Design from './Design';
-// import Fill from './Fill';
+import Fill from './FormFill';
 // import Share from './Share';
 import defaultImage from '../images/queen.gif';
 // import {fetchCardData} from '../services/CardService';
