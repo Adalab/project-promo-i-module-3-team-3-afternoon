@@ -1,0 +1,36 @@
+.btn-twitter{
+    background: $color-twitter;
+    border-radius: 3px;
+    width: 181px;
+    height: 30px;
+    color: $whiteColor;
+    font-size: rem(14);
+    line-height: 30px;
+}
+
+.card__share{
+    padding-top: 25px;
+    border-top: 1px solid $colorFooterBorder;
+
+    p{
+        font-size: rem(18);
+        font-weight: 600;
+        margin: 0px;
+    }
+
+    p.card__link{
+        font-size: rem(12);
+        color: $primaryColor;
+        margin: 5px 0 10px 0;
+    }
+
+    .btn-twitter{
+        margin: 20px auto;
+        
+    }
+}
+.containerShareBottom{
+    .hidden1{
+        display: none;
+    }
+}

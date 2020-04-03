@@ -15,4 +15,31 @@ class CardMaker extends React.Component {
     //body//
 }
 
+resetForm(){
+    this.setState({
+        open: 'design',
+        userInfo: {
+            "palette": '1',
+            "name": '',
+            "job": '',
+            "phone": '',
+            "email": '',
+            "linkedin": '',
+            "github": '',
+            "photo": defaultImage
+        },
+        isAvatarDefault: true,
+        profile: {
+          avatar: defaultImage
+        },
+        validUserName: '',
+        validPosition: '',
+        validAvatar: '',
+        validEmail: '',
+        validLinkedin: '',
+        validGithub: '',
+        isFormValid:''
+    })
+}
+
 export default CardMaker;
