@@ -1,10 +1,10 @@
 import React from 'react';
-//import Collapsables from './Collapsables';
+//import Collapsibles from './Collapsibles';
 import GetAvatar from './GetAvatar';
 
 const FormFill = props => {
     return (
-        //<Collapsables>
+        //<Collapsibles>
             <div className="containerFillInBottom" id="form-container">
                 <form id="formContainer">
                     <div className="nameCard">
@@ -44,7 +44,7 @@ const FormFill = props => {
                     </div>
                 </form>
             </div>
-        //</Collapsables>   
+        //</Collapsibles>   
     )
 }
 
