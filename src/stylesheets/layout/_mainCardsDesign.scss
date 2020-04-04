@@ -16,6 +16,8 @@
 
     @include forTablet {
         width: 40%;
+        position: fixed;
+        top: 0;
     }
 
     .title {
@@ -179,7 +181,7 @@
 .containerFillInBottom {
     max-height: 0px;
     transition: max-height 0.5s;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
 
     .nameCard {

@@ -4,6 +4,7 @@ import React from 'react';
 const Preview = props => { 
             
             return (
+                <div className="cardWrapper">
               <section className="preview">
     <div className="card_container">
 
@@ -45,6 +46,7 @@ const Preview = props => {
         </div>
     </div>
 </section>
+ </div>
             );
           }
           
