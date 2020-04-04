@@ -13,7 +13,7 @@
   }
   
   .preview {
-    background: url("../images/shiny.jpg") top center no-repeat;
+    background: url("../../images/shiny.jpg") top center no-repeat;
     background-size: cover;
     height: 80vh;
     display: flex;
@@ -71,6 +71,7 @@
     
       width: 240px;
       background-color: $whiteColor;
+      
       margin: 20px 30px 40px 30px;
  
   
@@ -104,20 +105,29 @@
           margin-bottom: 0px;
         }
       }
-      .image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .profile__image {
-        background: url("../images/queen.gif") top center no-repeat;
-        background-size: cover;
-        width: 240px;
-        height: 200px;
-        }
-      }
+
+      
+      
     }
+
+    
   }
   
+  .inputImage{
+    width: 100% ;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('../../images/queen.gif');
+    background-size: cover;
+    
+    width: 240px;
+    height: 200px;
+    
+  
+}
   .socialKit {
     display: flex;
     // align-content: flex-start;
