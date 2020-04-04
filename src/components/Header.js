@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.svg';
 
-class headerCards extends React.Component {
+class HeaderCards extends React.Component {
     render() {
         return (
             <header className="container_logoCards">
@@ -13,4 +13,4 @@ class headerCards extends React.Component {
     }
 }
 
-export default headerCards;
+export default HeaderCards;

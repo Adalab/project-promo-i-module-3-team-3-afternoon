@@ -1,6 +1,6 @@
 import React from 'react';
 
-class shareAll extends React.Component {
+class ShareAll extends React.Component {
     render() {
         return (
             <div className="containerShareTop">
@@ -29,4 +29,4 @@ class shareAll extends React.Component {
     }
 }
 
-export default shareAll;
+export default ShareAll;
