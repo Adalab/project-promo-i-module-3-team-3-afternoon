@@ -15,9 +15,7 @@ const Preview = props => {
                 <h3 className="role" id="cardrole">{props.position === '' ? 'Front-end developer' : props.position}</h3>
             </div>
 
-            <div id="inputImage" >
-                <div className="profile__image js__profile-image image"></div>
-                
+            <div className = "inputImage" id="inputImage" >
             </div>
 
             <ul className="socialKit">
