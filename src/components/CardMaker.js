@@ -1,7 +1,11 @@
 import React from 'react';
+import Header from './Header';
+import logo from '../images/tarjetas-molonas.png';
+import logoAdalab from '../images/logo-adalab.png';
 import Preview from './Preview';
 // import Design from './Design';
 import FormFill from './FormFill';
+import Footer from './Footer';
 // import Share from './Share';
 import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
@@ -16,6 +20,8 @@ class CardMaker extends React.Component {
               return (
             // <main className="main">
                 <div>
+                     <Header image={logo}
+                     />
             <Preview
                      // userName={userInfo.name}
                     // position={userInfo.job}
@@ -48,6 +54,9 @@ class CardMaker extends React.Component {
                 linkedin='Linkedin'
                 github='Github'
                 />
+                <Footer image={logoAdalab}
+         />
+        
                 </div>
               
                 )
