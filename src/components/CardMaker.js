@@ -5,6 +5,7 @@ import logoAdalab from '../images/logo-adalab.png';
 import Preview from './Preview';
 // import Design from './Design';
 import FormFill from './FormFill';
+import Share from './Share';
 import Footer from './Footer';
 // import Share from './Share';
 import DefaultImage from './DefaultImage';
@@ -53,6 +54,10 @@ class CardMaker extends React.Component {
                 phone='Teléfono'
                 linkedin='Linkedin'
                 github='Github'
+                />
+                 <Share 
+                 requiredMessage='Completa los campos obligatorios*'
+                 textButton='CREAR TARJETA'
                 />
                 <Footer image={logoAdalab}
          />

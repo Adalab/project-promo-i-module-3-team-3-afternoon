@@ -584,14 +584,17 @@
 .containerShareBottom {
     max-height: 0px;
     transition: max-height 0.5s;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include forTablet {
+        width: 40%;
+    }
 
-    .buttonShare {
+    .buttonShare_buttonDisabled {
         margin-top: 25px;
         margin-bottom: 30px;
         background-color:$primaryColor;
