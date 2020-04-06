@@ -3,6 +3,7 @@
     height: 100%;
     
     }
+
  .wrapper {
      height: calc(100% - 85px);
     }
@@ -178,7 +179,7 @@
 }
 
 .containerFillInBottom {
-    max-height: 0px;
+    // max-height: 0px;
     transition: max-height 0.5s;
     // overflow: hidden;
     width: 100%;
