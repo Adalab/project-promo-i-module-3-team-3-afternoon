@@ -5,7 +5,7 @@ import GetAvatar from './GetAvatar';
 const FormFill = props => {
     return (
         //<Collapsibles>
-        <section class="containerSectionStyles">
+      
             <div className="containerFillInBottom" id="form-container">
                 <form id="formContainer">
                     <div className="nameCard">
@@ -45,8 +45,8 @@ const FormFill = props => {
                     </div>
                 </form>
             </div>
-           </section>
-        //</Collapsibles>   
+           
+        // </Collapsibles>   
     )
 }
 

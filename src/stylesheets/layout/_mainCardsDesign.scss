@@ -16,8 +16,7 @@
 
     @include forTablet {
         width: 40%;
-        position: absolute;
-        top: 111px;
+        
     }
 
     .title {
@@ -76,10 +75,10 @@
         padding-bottom: 10px;
     }
 
-    .containerDesignBottom {
-        max-height: 0px;
+    .color_selected {
+        // max-height: 0px;
         transition: max-height 0.5s;
-        overflow: hidden;
+        // overflow: hidden;
         width: 100%;
 
         display: flex;

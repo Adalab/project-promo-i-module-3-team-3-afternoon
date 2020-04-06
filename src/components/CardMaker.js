@@ -3,7 +3,7 @@ import Header from './Header';
 import logo from '../images/tarjetas-molonas.png';
 import logoAdalab from '../images/logo-adalab.png';
 import Preview from './Preview';
-// import Design from './Design';
+import Design from './Design';
 import FormFill from './FormFill';
 import Footer from './Footer';
 // import Share from './Share';
@@ -18,10 +18,13 @@ class CardMaker extends React.Component {
 
     render() {
               return (
-            // <main className="main">
-                <div>
+                  <div className="wrapper">
+                   
+             
                      <Header image={logo}
                      />
+                    <div class="cardWrapper">
+                     
             <Preview
                      // userName={userInfo.name}
                     // position={userInfo.job}
@@ -43,8 +46,9 @@ class CardMaker extends React.Component {
                     avatar='{profile.avatar} '
                     resetForm='{this.resetForm}'
                 /> 
-                {/* </main>  */}
-              
+               
+                <section className="containerSectionStyles">
+                <Design />
                 <FormFill 
                 nameTitle='Nombre completo'
                 requiredMessage='Completa los campos obligatorios*'
@@ -54,11 +58,11 @@ class CardMaker extends React.Component {
                 linkedin='Linkedin'
                 github='Github'
                 />
+                </section>
+                </div>
                 <Footer image={logoAdalab}
          />
-        
                 </div>
-              
                 )
                 }
                 }
