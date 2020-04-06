@@ -1,21 +1,13 @@
 import React from 'react';
+//import Collapsibles from './Collapsibles';
 
-class Item extends React.Component {
-    render() {
+const Design = props => {
       return (
 
-      //  <Collapsibles
-      //      collapseSection={props.collapseSection}
-      //      open={props.open}
-     //
-     //     category="design"
-     //       lowerSection="subContainer"
-     //       sectionTitle="diseña"
-     //       icon="far fa-object-ungroup"
-     //   ></Collapsibles>
-
-     <div className="color_selected">
-     <p className="title special">COLORES</p>
+     // <Collapsibles
+     
+        <div className="color_selected">
+           <p className="title special">COLORES</p>
      
             <div className="palette">
              <input className="check" id="colorOne" type="radio" value="colorsCard" name="colorCard" palette="palette1"
@@ -41,17 +33,13 @@ class Item extends React.Component {
                  <div className="palette containerColorPalette8"></div>
                  <div className="palette containerColorPalette9"></div>
              </label>
-         </div>
- </div>
+            </div>
+        </div>
+         //</Collapsibles>
+      );
+}
   
   //cambio de los <li> por <div className="palette">
   //cambio de <div className="containerDesignBottom"> por  <div className="color_selected">
-
-
-
-
-
-
-
 
 export default Design;
