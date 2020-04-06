@@ -7,14 +7,27 @@ import Preview from './Preview';
 import FormFill from './FormFill';
 import Footer from './Footer';
 // import Share from './Share';
-import DefaultImage from './DefaultImage';
+// import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
+import image from '../images/queen.gif';
+
 
 
 class CardMaker extends React.Component {
     constructor(props) {
         super(props);
+        this.handleCollapse = this.handleCollapse.bind(this)
+    this.state = {
+      activePanel: ''
+        
     }
+}
+
+    handleCollapse(targetId) {
+        this.setState({activePanel: targetId})
+      }
+
+    
 
     render() {
               return (
@@ -53,6 +66,8 @@ class CardMaker extends React.Component {
                 phone='Teléfono'
                 linkedin='Linkedin'
                 github='Github'
+                handleCollapse={this.handleCollapse} 
+                activePanel={this.state.activePanel}
                 />
                 <Footer image={logoAdalab}
          />
