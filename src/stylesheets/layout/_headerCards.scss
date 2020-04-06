@@ -1,0 +1,13 @@
+.container_logoCards {
+    width: 100%;
+    height: 111px;
+    background: $whiteColor;
+    padding: 31px 79px 30px 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+      .logoCards {
+        width: 201px;
+    }
+}

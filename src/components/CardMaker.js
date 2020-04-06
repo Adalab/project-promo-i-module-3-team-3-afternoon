@@ -1,18 +1,67 @@
 import React from 'react';
+import Header from './Header';
+import logo from '../images/tarjetas-molonas.png';
+import logoAdalab from '../images/logo-adalab.png';
 import Preview from './Preview';
 // import Design from './Design';
-// import Fill from './Fill';
+import FormFill from './FormFill';
+import Footer from './Footer';
 // import Share from './Share';
-import defaultImage from '../images/queen.gif';
+import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
-import '../stylesheets/App.scss';
 
 
 class CardMaker extends React.Component {
     constructor(props) {
         super(props);
     }
-    //body//
-}
+
+    render() {
+              return (
+            // <main className="main">
+                <div>
+                     <Header image={logo}
+                     />
+            <Preview
+                     // userName={userInfo.name}
+                    // position={userInfo.job}
+                    // paletteValue={userInfo.palette}
+                    // email={userInfo.email}
+                    // phone={userInfo.phone}
+                    // linkedin={userInfo.linkedin}
+                    // github={userInfo.github}
+                    // avatar={profile.avatar} 
+                    // resetForm={this.resetForm}}
+
+                    userName='Nombre Apellidos'
+                    position='Front End Developer'
+                    paletteValue=''
+                    email='asdasd@dfs.com'
+                    phone='6666666'
+                    linkedin='{userInfo.linkedin}'
+                    github='{userInfo.github}'
+                    avatar='{profile.avatar} '
+                    resetForm='{this.resetForm}'
+                /> 
+                {/* </main>  */}
+              
+                <FormFill 
+                nameTitle='Nombre completo'
+                requiredMessage='Completa los campos obligatorios*'
+                profession='Puesto'
+                email='Email'
+                phone='Teléfono'
+                linkedin='Linkedin'
+                github='Github'
+                />
+                <Footer image={logoAdalab}
+         />
+        
+                </div>
+              
+                )
+                }
+                }
+
 
 export default CardMaker;

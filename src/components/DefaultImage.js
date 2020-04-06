@@ -1,3 +1,3 @@
-const defaultImage = '../assets/images/queen.gif';
+// const defaultImage = '';
 
-export default defaultImage;
+// export default defaultImage;

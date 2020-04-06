@@ -1,0 +1,45 @@
+ footer {
+    font-size: 16px;
+    
+
+    @include forTablet {
+    height: 85px;
+    }
+    .footer-wrapper {
+        background-color: $whiteColor;
+        border-top: solid 1px $colorFooterBorder;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        @include forTablet {
+            padding: 10px 40px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .copyright {
+            color: $colorFooterText;
+            font-family: $primaryFont;
+            line-height: 1.43;
+            font-size: 0.875rem;
+            margin-top: 18px;
+            .first-letter {
+                text-transform: capitalize;
+            }
+            @include forTablet {
+                margin-top: 0px;
+            }
+        }
+        .img-container {
+            height: 2.5rem;
+            margin: 0.75rem;
+            a {
+                padding: 10px;
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}

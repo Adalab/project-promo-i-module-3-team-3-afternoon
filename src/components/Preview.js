@@ -1,14 +1,14 @@
 import React from 'react';
-import defaultImage from './defaultImage';
-
+// import defaultImage from 'DefaultImage';
 
 const Preview = props => { 
             
             return (
+                <div className="cardWrapper">
               <section className="preview">
     <div className="card_container">
 
-        <button id="reset" className="buttonReset" onClick={props.resetForm}> <i className="far fa-trash-alt"></i> reset</button>
+        <button id="reset" className="buttonReset"> <i className="far fa-trash-alt"></i> reset</button>
 
         <div className="card" id="cardid">
             <div className="headline">
@@ -16,9 +16,7 @@ const Preview = props => {
                 <h3 className="role" id="cardrole">{props.position === '' ? 'Front-end developer' : props.position}</h3>
             </div>
 
-            <div id="inputImage" className="image">
-                <div className="profile__image js__profile-image" style={{backgroundImage: `url(${props.avatar})`}}></div>
-                
+            <div className = "inputImage" id="inputImage" >
             </div>
 
             <ul className="socialKit">
@@ -48,6 +46,7 @@ const Preview = props => {
         </div>
     </div>
 </section>
+ </div>
             );
           }
           
@@ -57,9 +56,9 @@ const Preview = props => {
           userName: 'Nombre Apellido',
           position: 'Front-End Developer',
           paletteValue: '1',
-          avatar: defaultImage
+        //   avatar: defaultImage
       }
       
       
         
-        export default CardsPreview;
+        export default Preview;
