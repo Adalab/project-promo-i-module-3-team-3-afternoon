@@ -1,18 +1,8 @@
 import React from 'react';
-import CollapseItem from './Collapsibles';
 import GetAvatar from './GetAvatar';
 
 const FormFill = props => {
     return (
-        //<Collapsibles>
-        
-        <CollapseItem handleCollapse = {props.handleCollapse}
-                      activePanel = {props.activePanel}
-                      id = 'collapse-1'
-        >
-          
-       
-            {/* <div className="containerFillInBottom" id="form-container"> */}
                 <form id="formContainer">
                     <div className="nameCard">
                         <label className="name" htmlFor="name">{props.nameTitle}<span className="inputRequired">*</span></label>
@@ -50,12 +40,7 @@ const FormFill = props => {
                         id="github-input"/>
                     </div>
                 </form>
-            {/* </div> */}
-           
-
-           </CollapseItem>
-           
-       
+        
     )
 }
 

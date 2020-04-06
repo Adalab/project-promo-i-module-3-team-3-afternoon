@@ -58,16 +58,8 @@ class CardMaker extends React.Component {
                 /> 
                 {/* </main>  */}
               
-                <FormFill 
-                nameTitle='Nombre completo'
-                requiredMessage='Completa los campos obligatorios*'
-                profession='Puesto'
-                email='Email'
-                phone='Teléfono'
-                linkedin='Linkedin'
-                github='Github'
-                handleCollapse={this.handleCollapse} 
-                activePanel={this.state.activePanel}
+                <CollapseList handleCollapse={this.handleCollapse}
+                              activePanel={this.state.activePanel}
                 />
                 <Footer image={logoAdalab}
          />
