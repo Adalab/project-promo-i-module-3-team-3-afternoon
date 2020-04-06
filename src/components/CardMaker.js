@@ -6,7 +6,7 @@ import Preview from "./Preview";
 import Design from "./Design";
 import FormFill from "./FormFill";
 import Footer from "./Footer";
-// import Share from './Share';
+import Share from './Share';
 import DefaultImage from "./DefaultImage";
 // import {fetchCardData} from '../services/CardService';
 
@@ -54,6 +54,9 @@ class CardMaker extends React.Component {
                 linkedin="Linkedin"
                 github="Github"
               />
+              <Share 
+                 requiredMessage='Completa los campos obligatorios*'
+                />
             </section>
           </div>
         

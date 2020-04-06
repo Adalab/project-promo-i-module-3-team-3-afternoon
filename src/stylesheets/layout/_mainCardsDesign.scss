@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: start;
     width: 100%;
-    padding: 0 30px 30px 20px;
+    padding: 20px 30px 30px 20px;
     font-family: $primaryFont;
 
     @include forTablet {
@@ -582,9 +582,9 @@
 }
 
 .containerShareBottom {
-    max-height: 0px;
+    // max-height: 0px;
     transition: max-height 0.5s;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
     display: flex;
     flex-direction: column;
