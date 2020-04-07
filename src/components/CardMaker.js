@@ -10,7 +10,7 @@ import Footer from './Footer';
 // import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
 import image from '../images/queen.gif';
-
+import CollapseList from './CollapseList';
 
 class CardMaker extends React.Component {
     constructor(props) {
@@ -33,7 +33,6 @@ class CardMaker extends React.Component {
     
         <div className="wrapper">
           <Header image={logo} />
-          <div class="cardWrapper">
             <Preview
               // userName={userInfo.name}
               // position={userInfo.job}
@@ -45,54 +44,26 @@ class CardMaker extends React.Component {
               // avatar={profile.avatar}
               // resetForm={this.resetForm}}
 
-              userName="Nombre Apellidos"
-              position="Front End Developer"
-              paletteValue=""
-              email="asdasd@dfs.com"
-              phone="6666666"
-              linkedin="{userInfo.linkedin}"
-              github="{userInfo.github}"
-              avatar="{profile.avatar} "
-              resetForm="{this.resetForm}"
+              userName='Nombre Apellidos'
+              position='Front End Developer'
+              paletteValue=''
+              email='asdasd@dfs.com'
+              phone='6666666'
+              linkedin='{userInfo.linkedin}'
+              github='{userInfo.github}'
+              avatar='{profile.avatar} '
+              resetForm='{this.resetForm}'
             />
-
-<<<<<<< HEAD
-                    userName='Nombre Apellidos'
-                    position='Front End Developer'
-                    paletteValue=''
-                    email='asdasd@dfs.com'
-                    phone='6666666'
-                    linkedin='{userInfo.linkedin}'
-                    github='{userInfo.github}'
-                    avatar='{profile.avatar} '
-                    resetForm='{this.resetForm}'
-                /> 
                 {/* </main>  */}
               
                 <CollapseList handleCollapse={this.handleCollapse}
                               activePanel={this.state.activePanel}
-=======
-            <section className="containerSectionStyles">
-              <Design />
-              <FormFill
-                nameTitle="Nombre completo"
-                requiredMessage="Completa los campos obligatorios*"
-                profession="Puesto"
-                email="Email"
-                phone="Teléfono"
-                linkedin="Linkedin"
-                github="Github"
-              />
-              <Share 
-                 requiredMessage='Completa los campos obligatorios*'
->>>>>>> master
                 />
-            </section>
-          </div>
         
-        <Footer image={logoAdalab} />
+        <Footer image={logoAdalab}
+/>
      </div>
-    );
+    )
   }
 }
 
