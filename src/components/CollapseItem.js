@@ -14,7 +14,7 @@ const CollapseItem = (props) => {
              className={`containerFillInTop collapse-item ${props.activePanel === props.id ? "active" : ""}`}>
           <header className="subContainer">
             <span>
-              <i className="icon far fa-keyboard"></i>
+              <i className={`icon ${props.icon}`}></i>
               <span className="title">{props.title}</span>
             </span>
               <i className="iconDirection2 fas fa-chevron-down"></i>

@@ -1,10 +1,7 @@
 import React from 'react';
-//import Collapsibles from './Collapsibles';
 
 const Design = props => {
       return (
-
-     // <Collapsibles
     
         <div className="color_selected">
            <p className="title special">COLORES</p>

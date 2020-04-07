@@ -1,6 +1,8 @@
 import React from 'react';
 import FormFill from './FormFill';
 import CollapseItem from './CollapseItem';
+import Design from './Design';
+import Share from './Share'
 
 const CollapseList = props => {
   return(
@@ -9,11 +11,9 @@ const CollapseList = props => {
                     activePanel = {props.activePanel}
                     id = 'collapse-1'
                     title = 'DISEÑA'
+                    icon = 'far fa-object-ungroup'
       >
-        {/*AQUÍ LOS SELECTORES para comprobar que el colapsable funciona he metido texto de relleno, podeis quitar el p*/}
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-        </p>
+         <Design />
       </CollapseItem>
       <CollapseItem handleCollapse = {props.handleCollapse}
                     activePanel = {props.activePanel}
@@ -36,11 +36,9 @@ const CollapseList = props => {
                     activePanel = {props.activePanel}
                     id = 'collapse-3'
                     title = 'COMPARTE'
+                    icon = 'fas fa-share-alt'
         >
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-        </p>
-        {/*AQUÍ EL COMPONENTE DE SHARE BUTTON para comprobar que el colapsable funciona he metido texto de relleno, podeis quitar el p*/}
+          <Share />
 
       </CollapseItem>
     </div>
