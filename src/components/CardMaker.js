@@ -9,10 +9,19 @@ import Footer from "./Footer";
 import Share from './Share';
 import DefaultImage from "./DefaultImage";
 // import {fetchCardData} from '../services/CardService';
+import CollapseList from './CollapseList';
 
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activePanel: ''
+        
+    }
+  }
+
+  handleCollapse(targetId) {
+    this.setState({activePanel: targetId})
   }
 
   render() {
@@ -22,16 +31,7 @@ class CardMaker extends React.Component {
           <Header image={logo} />
           <div class="cardWrapper">
             <Preview
-              // userName={userInfo.name}
-              // position={userInfo.job}
-              // paletteValue={userInfo.palette}
-              // email={userInfo.email}
-              // phone={userInfo.phone}
-              // linkedin={userInfo.linkedin}
-              // github={userInfo.github}
-              // avatar={profile.avatar}
-              // resetForm={this.resetForm}}
-
+            
               userName="Nombre Apellidos"
               position="Front End Developer"
               paletteValue=""
@@ -44,18 +44,8 @@ class CardMaker extends React.Component {
             />
 
             <section className="containerSectionStyles">
-              <Design />
-              <FormFill
-                nameTitle="Nombre completo"
-                requiredMessage="Completa los campos obligatorios*"
-                profession="Puesto"
-                email="Email"
-                phone="Teléfono"
-                linkedin="Linkedin"
-                github="Github"
-              />
-              <Share 
-                 requiredMessage='Completa los campos obligatorios*'
+            <CollapseList handleCollapse={this.handleCollapse}
+                              activePanel={this.state.activePanel}
                 />
             </section>
           </div>
