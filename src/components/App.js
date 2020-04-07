@@ -20,11 +20,11 @@ class App extends React.Component {
         //   <Footer image={logoAdalab}
         //   />
         // </div>
-        <div className="wrapper">
+        
         
         <CardMaker
         />
-      </div>
+      
 
       );
     }

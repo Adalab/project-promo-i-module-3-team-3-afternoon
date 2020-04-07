@@ -12,7 +12,6 @@ import Footer from './Footer';
 import image from '../images/queen.gif';
 
 
-
 class CardMaker extends React.Component {
     constructor(props) {
         super(props);
@@ -29,23 +28,35 @@ class CardMaker extends React.Component {
 
     
 
-    render() {
-              return (
-            // <main className="main">
-                <div>
-                     <Header image={logo}
-                     />
+  render() {
+    return (
+    
+        <div className="wrapper">
+          <Header image={logo} />
+          <div class="cardWrapper">
             <Preview
-                     // userName={userInfo.name}
-                    // position={userInfo.job}
-                    // paletteValue={userInfo.palette}
-                    // email={userInfo.email}
-                    // phone={userInfo.phone}
-                    // linkedin={userInfo.linkedin}
-                    // github={userInfo.github}
-                    // avatar={profile.avatar} 
-                    // resetForm={this.resetForm}}
+              // userName={userInfo.name}
+              // position={userInfo.job}
+              // paletteValue={userInfo.palette}
+              // email={userInfo.email}
+              // phone={userInfo.phone}
+              // linkedin={userInfo.linkedin}
+              // github={userInfo.github}
+              // avatar={profile.avatar}
+              // resetForm={this.resetForm}}
 
+              userName="Nombre Apellidos"
+              position="Front End Developer"
+              paletteValue=""
+              email="asdasd@dfs.com"
+              phone="6666666"
+              linkedin="{userInfo.linkedin}"
+              github="{userInfo.github}"
+              avatar="{profile.avatar} "
+              resetForm="{this.resetForm}"
+            />
+
+<<<<<<< HEAD
                     userName='Nombre Apellidos'
                     position='Front End Developer'
                     paletteValue=''
@@ -60,15 +71,29 @@ class CardMaker extends React.Component {
               
                 <CollapseList handleCollapse={this.handleCollapse}
                               activePanel={this.state.activePanel}
+=======
+            <section className="containerSectionStyles">
+              <Design />
+              <FormFill
+                nameTitle="Nombre completo"
+                requiredMessage="Completa los campos obligatorios*"
+                profession="Puesto"
+                email="Email"
+                phone="Teléfono"
+                linkedin="Linkedin"
+                github="Github"
+              />
+              <Share 
+                 requiredMessage='Completa los campos obligatorios*'
+>>>>>>> master
                 />
-                <Footer image={logoAdalab}
-         />
+            </section>
+          </div>
         
-                </div>
-              
-                )
-                }
-                }
-
+        <Footer image={logoAdalab} />
+     </div>
+    );
+  }
+}
 
 export default CardMaker;
