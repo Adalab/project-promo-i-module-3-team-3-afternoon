@@ -10,6 +10,7 @@ import Footer from './Footer';
 // import DefaultImage from './DefaultImage';
 // import {fetchCardData} from '../services/CardService';
 import image from '../images/queen.gif';
+import CollapseList from './CollapseList'
 
 
 

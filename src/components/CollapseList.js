@@ -1,16 +1,17 @@
 import React from 'react';
 import FormFill from './FormFill';
+import CollapseItem from './CollapseItem';
 
 const CollapseList = props => {
   return(
     <div>
-      <CollapseItem handleCollapse = {props.handleCollapse}
+      {/* <CollapseItem handleCollapse = {props.handleCollapse}
                       activePanel = {props.activePanel}
                       id = 'collapse-1'
         >
-        {/*radio selector component */}
+        radio selector component 
 
-      </CollapseItem>
+      </CollapseItem> */}
       <CollapseItem handleCollapse = {props.handleCollapse}
                       activePanel = {props.activePanel}
                       id = 'collapse-2'
@@ -27,14 +28,14 @@ const CollapseList = props => {
                 activePanel={this.state.activePanel}
                 />
       </CollapseItem>
-      <CollapseItem handleCollapse = {props.handleCollapse}
+      {/* <CollapseItem handleCollapse = {props.handleCollapse}
                       activePanel = {props.activePanel}
                       id = 'collapse-3'
         >
 
-        {/*share button */}
+        share button
 
-      </CollapseItem>
+      </CollapseItem> */}
     </div>
   )
 

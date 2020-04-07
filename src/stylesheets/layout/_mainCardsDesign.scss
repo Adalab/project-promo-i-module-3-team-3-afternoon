@@ -618,8 +618,11 @@
 }
 
 
-.active {
-    p{
-  display: none;
+.active  {
+    .containerFillInBottom{
+        display: none
+        // display: block
     }
-}
+    
+  }
+ 
