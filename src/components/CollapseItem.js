@@ -1,30 +1,30 @@
 import React from 'react';
 
-class CollapseItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.displayPanel = this.displayPanel.bind(this)
+
+//aquí os recomiendo que useis o funciones o clases, si no vais a usar estado es más cómodo que utiliceis componentes funcionales
+const CollapseItem = (props) => {
+
+  const displayPanel = (evt) => {
+    props.handleCollapse(evt.currentTarget.id)
   }
 
-  displayPanel(evt) {
-    this.props.handleCollapse(evt.currentTarget.id)
-  }
-
-  render() {
     return (
-        <div id={this.props.id} onClick={this.displayPanel} className={`containerFillInTop collapse-item ${this.props.activePanel === this.props.id ? "active" : ""}`}>
-          <div className="subContainer">
-              <div><i className="icon far fa-keyboard"></i></div>
-              <p className="title">RELLENA</p>
-              <div className="iconDirection" ><i className="iconDirection2 fas fa-chevron-down"></i></div>
-          </div>
+        <div id={props.id} 
+             onClick={displayPanel} 
+             className={`containerFillInTop collapse-item ${props.activePanel === props.id ? "active" : ""}`}>
+          <header className="subContainer">
+            <span>
+              <i className="icon far fa-keyboard"></i>
+              <span className="title">{props.title}</span>
+            </span>
+              <i className="iconDirection2 fas fa-chevron-down"></i>
+          </header>
           <div className="containerFillInBottom">
-          {this.props.children}
-        </div>
+            {props.children}
+          </div>
       </div>
       
     );
-  }
 }
 
 export default CollapseItem;

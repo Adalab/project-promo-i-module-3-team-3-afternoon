@@ -7,6 +7,11 @@
  .wrapper {
      height: calc(100% - 85px);
     }
+
+.left-column{
+    width: 100%
+}
+
 .containerSectionStyles {
     display: flex;
     flex-direction: column;
@@ -22,22 +27,27 @@
 
     .title {
         padding-left: 10px;
+        display:inline;
         @include primaryBoldFont;
         color: $metalColor;
     }
 
     .iconDirection {
-        padding-top: 27px;
-        display: flex;
-        flex-direction: row;
+        // padding-top: 27px;
+        display: inline;
         color: $metalColor;
         font-size: 18px;
+    }
+
+    .iconDirection2{
+        display:inline
     }
 
     .subContainer {
         padding-top: 27px;
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
+        width:100%;
         font-family: $primaryFont;
         color: $metalColor;
         font-size: 18px;
@@ -47,6 +57,7 @@
             font-size: 18px;
             width: 21px;
             height: 18px;
+            display:inline
         }
     }
 
@@ -166,8 +177,8 @@
 // PARTE RELLENA //
 
 .containerFillInTop {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     justify-content: space-between;
     font-family: $primaryFont;
     color: $metalColor;
@@ -616,9 +627,12 @@
     }
 
 }
+.containerFillInBottom{
+    display:none;
+}
 
 .active{
     .containerFillInBottom{
-        display:none;
+        display:block;
     }
 }

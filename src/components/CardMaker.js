@@ -14,42 +14,39 @@ import CollapseList from './CollapseList';
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
+    //falta bindear por eso no funciona
+    this.handleCollapse = this.handleCollapse.bind(this);
     this.state = {
       activePanel: ''
-        
     }
   }
 
   handleCollapse(targetId) {
+    console.log(targetId)
     this.setState({activePanel: targetId})
   }
 
   render() {
     return (
-    
         <div className="wrapper">
           <Header image={logo} />
-          <div class="cardWrapper">
-            <Preview
-            
-              userName="Nombre Apellidos"
-              position="Front End Developer"
-              paletteValue=""
-              email="asdasd@dfs.com"
-              phone="6666666"
-              linkedin="{userInfo.linkedin}"
-              github="{userInfo.github}"
-              avatar="{profile.avatar} "
-              resetForm="{this.resetForm}"
+          <div className="cardWrapper">
+            <Preview userName="Nombre Apellidos"
+                     position="Front End Developer"
+                     paletteValue=""
+                     email="asdasd@dfs.com"
+                     phone="6666666"
+                     linkedin="{userInfo.linkedin}"
+                     github="{userInfo.github}"
+                     avatar="{profile.avatar} "
+                     resetForm="{this.resetForm}"
             />
-
             <section className="containerSectionStyles">
-            <CollapseList handleCollapse={this.handleCollapse}
-                              activePanel={this.state.activePanel}
-                />
+              <CollapseList handleCollapse={this.handleCollapse}
+                            activePanel={this.state.activePanel}
+              />
             </section>
           </div>
-        
         <Footer image={logoAdalab} />
      </div>
     );
