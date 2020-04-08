@@ -5,9 +5,13 @@ import Design from './Design';
 import Share from './Share'
 
 const CollapseList = props => {
+
+ 
+
   return(
     <div className="left-column">
       <CollapseItem handleCollapse = {props.handleCollapse}
+                    handleRadioChange = {props.handleRadioChange}
                     activePanel = {props.activePanel}
                     id = 'collapse-1'
                     title = 'DISEÑA'

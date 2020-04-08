@@ -3,6 +3,7 @@ import React from 'react';
 
 
 const Design = props => {
+
   handleRadioChange(event){
     const target = event.target;
     props.handleRadioChange(target);
@@ -29,7 +30,11 @@ const Design = props => {
                 </label>
              </li>
             <li>
-             <input className="check" id="colorTwo" type="radio" value="colorsCard" name="colorCard" />
+             <input className="check" 
+             id="colorTwo" 
+             type="radio" 
+             value="colorsCard" 
+             name="colorCard" />
              <label className="colorPalette">
                  <div className="palette containerColorPalette4"></div>
                  <div className="palette containerColorPalette5"></div>

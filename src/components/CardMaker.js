@@ -18,13 +18,24 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.state = {
       activePanel: ''
+      palette:''
     }
   }
 
   handleCollapse(targetId) {
     console.log(targetId)
-    this.setState({activePanel: targetId})
+    if (targetId !== this.state.activePanel){
+      this.setState({activePanel:targetId})
+    } else{
+      this.setState({activePanel:''})
+    }
   }
+
+  handleRadioChange(target){
+    this.setState({
+        palette: target.value
+    })
+}
 
   render() {
     return (
