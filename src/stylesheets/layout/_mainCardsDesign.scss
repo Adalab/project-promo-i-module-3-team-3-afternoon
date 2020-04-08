@@ -57,7 +57,7 @@
             font-size: 18px;
             width: 21px;
             height: 18px;
-            display:inline
+            display: inline;
         }
     }
 
@@ -92,7 +92,7 @@
         transition: max-height 0.5s;
         // overflow: hidden;
         width: 100%;
-
+        padding-top: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -629,10 +629,11 @@
 }
 .containerFillInBottom{
     display:none;
+    
 }
-
 .active{
     .containerFillInBottom{
         display:block;
     }
+    
 }
