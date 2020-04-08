@@ -23,7 +23,11 @@ class CardMaker extends React.Component {
 
   handleCollapse(targetId) {
     console.log(targetId)
-    this.setState({activePanel: targetId})
+    if (targetId !== this.state.activePanel){
+      this.setState({activePanel:targetId})
+    } else{
+      this.setState({activePanel:''})
+    }
   }
 
   render() {
