@@ -9,10 +9,10 @@ const CollapseItem = (props) => {
   }
 
     return (
-        <div id={props.id} 
-             onClick={displayPanel} 
+        <div 
+             
              className={`containerFillInTop collapse-item ${props.activePanel === props.id ? "active": ""}`}>
-          <header className="subContainer">
+          <header className="subContainer" id={props.id} onClick={displayPanel} >
             <span>
               <i className={`icon ${props.icon}`}></i>
               <span className="title">{props.title}</span>
