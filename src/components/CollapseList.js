@@ -11,15 +11,17 @@ const CollapseList = props => {
   return(
     <div className="left-column">
       <CollapseItem handleCollapse = {props.handleCollapse}
-                    handleRadioChange = {props.handleRadioChange}
+                    
                     activePanel = {props.activePanel}
                     id = 'collapse-1'
                     title = 'DISEÑA'
                     icon = 'far fa-object-ungroup'
       >
-         <Design />
+         <Design handleRadioChange = {props.handleRadioChange}
+                  palette ={props.palette}/>
       </CollapseItem>
       <CollapseItem handleCollapse = {props.handleCollapse}
+                    
                     activePanel = {props.activePanel}
                     id = 'collapse-2'
                     title = 'RELLENA'

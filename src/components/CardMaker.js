@@ -3,10 +3,7 @@ import Header from "./Header";
 import logo from "../images/tarjetas-molonas.png";
 import logoAdalab from "../images/logo-adalab.png";
 import Preview from "./Preview";
-import Design from "./Design";
-import FormFill from "./FormFill";
 import Footer from "./Footer";
-import Share from './Share';
 import DefaultImage from "./DefaultImage";
 // import {fetchCardData} from '../services/CardService';
 import CollapseList from './CollapseList';
@@ -16,8 +13,9 @@ class CardMaker extends React.Component {
     super(props);
     //falta bindear por eso no funciona
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.handleRadioChange = this.handleRadioChange.bind(this);
     this.state = {
-      activePanel: ''
+      activePanel: '',
       palette:''
     }
   }
@@ -31,11 +29,14 @@ class CardMaker extends React.Component {
     }
   }
 
+
   handleRadioChange(target){
-    this.setState({
-        palette: target.value
-    })
-}
+    this.setState(prevState => {
+      return prevState.palette= target.value
+    });
+  }
+
+  
 
   render() {
     return (
@@ -55,6 +56,8 @@ class CardMaker extends React.Component {
             <section className="containerSectionStyles">
               <CollapseList handleCollapse={this.handleCollapse}
                             activePanel={this.state.activePanel}
+                            handleRadioChange={this.handleRadioChange}
+                            palette ={this.state.palette}
               />
             </section>
           </div>

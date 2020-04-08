@@ -4,10 +4,14 @@ import React from 'react';
 
 const Design = props => {
 
-  handleRadioChange(event){
-    const target = event.target;
-    props.handleRadioChange(target);
+  
+
+  const handleRadioChange = (event) => {
+    let target = event.target
+    props.handleRadioChange(target)
+    console.log(event.target)
   }
+  
 
       return (
     
@@ -15,26 +19,33 @@ const Design = props => {
            <p className="title special">COLORES</p>
             <ul>
             <li>
-             <input 
+
+             <input
              className="check" 
-             id="colorOne" 
+             id="palette1" 
              type="radio" 
-             value="colorsCard" 
+             value="palette1" 
              name="colorCard" 
-             palette="palette1"
-             onClick={this.handleRadioChange} />
+             onClick={handleRadioChange} 
+             checked={props.palette === 'palette1'}
+             />
+
              <label className="colorPalette">
                  <div className="palette containerColorPalette1"></div>
                  <div className="palette containerColorPalette2"></div>
                  <div className="palette containerColorPalette3"></div>
                 </label>
+
              </li>
             <li>
              <input className="check" 
-             id="colorTwo" 
+             id="palette2" 
              type="radio" 
-             value="colorsCard" 
-             name="colorCard" />
+             value="palette2" 
+             name="colorCard"
+             onClick={handleRadioChange}  
+             checked={props.palette === 'palette2'}
+             />
              <label className="colorPalette">
                  <div className="palette containerColorPalette4"></div>
                  <div className="palette containerColorPalette5"></div>
@@ -42,7 +53,13 @@ const Design = props => {
              </label>
              </li>
              <li>
-             <input className="check" id="color3" type="radio" value="colorsCard" name="colorCard" />
+             <input className="check" 
+             id="palette3" 
+             type="radio" 
+             value="palette3" 
+             name="colorCard" 
+             checked={props.palette === 'palette3'}
+             onClick={handleRadioChange} />
              <label className="colorPalette">
                  <div className="palette containerColorPalette7"></div>
                  <div className="palette containerColorPalette8"></div>
