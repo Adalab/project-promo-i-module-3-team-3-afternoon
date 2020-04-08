@@ -17,13 +17,25 @@ class CardMaker extends React.Component {
     //falta bindear por eso no funciona
     this.handleCollapse = this.handleCollapse.bind(this);
     this.state = {
-      activePanel: ''
+      activePanel: '',
+      icon: 'far fa-object-ungroup'
     }
   }
 
   handleCollapse(targetId) {
     console.log(targetId)
     this.setState({activePanel: targetId})
+  }
+
+  changeArrow() {
+    this.setState((prevState, props) => {
+      let nextIcon;
+      if (prevState.icon === 'far fa-object-ungroup') {
+        nextStyling = 'danger';
+      } else {
+        nextStyling = 'info';
+      }
+
   }
 
   render() {
@@ -44,6 +56,8 @@ class CardMaker extends React.Component {
             <section className="containerSectionStyles">
               <CollapseList handleCollapse={this.handleCollapse}
                             activePanel={this.state.activePanel}
+                            icon = {this.state.icon}
+                            handleChangeArrow ={this.changeArrow}
               />
             </section>
           </div>

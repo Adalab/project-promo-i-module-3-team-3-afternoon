@@ -6,14 +6,7 @@ class Share extends React.Component {
       }
     render() {
         return (
-            // <Collapsibles/>
-    //    <div className="containerShareTop">
-    //              <div className="subContainer">
-    //                  <div><i className="icon fas fa-share-alt"></i></div>
-    //                  <p className="title">COMPARTE</p>
-    //              </div>
-    //              <div className="iconDirection"><i className="iconDirection3 fas fa-chevron-down"></i></div>
-    //          </div> */
+    
             <div className="containerShareBottom">
                 <p id="error-message" className="hiddenMessage">{this.props.requiredMessage}</p>
                 <button id="buttonValidation" className="button buttonShare buttonDisabled" type="button" disabled>

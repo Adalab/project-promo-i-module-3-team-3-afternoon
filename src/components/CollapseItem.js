@@ -8,9 +8,13 @@ const CollapseItem = (props) => {
     props.handleCollapse(evt.currentTarget.id)
   }
 
+  const handleChangeArrow =(evt) =>{
+    props.changeArrow(evt.currentTarget.className)
+  }
+
     return (
         <div id={props.id} 
-             onClick={displayPanel} 
+             onClick={displayPanel, handleChangeArrow} 
              className={`containerFillInTop collapse-item ${props.activePanel === props.id ? "active" : ""}`}>
           <header className="subContainer">
             <span>

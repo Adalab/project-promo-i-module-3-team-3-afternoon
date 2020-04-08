@@ -11,7 +11,7 @@ const CollapseList = props => {
                     activePanel = {props.activePanel}
                     id = 'collapse-1'
                     title = 'DISEÑA'
-                    icon = 'far fa-object-ungroup'
+                    icon = {props.icon}
       >
          <Design />
       </CollapseItem>
