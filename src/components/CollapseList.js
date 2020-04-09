@@ -19,7 +19,7 @@ const CollapseList = props => {
       >
          <Design handleRadioChange = {props.handleRadioChange}
                   palette ={props.palette}
-                  classPalette={props.classPalette}/>
+                  />
       </CollapseItem>
       <CollapseItem handleCollapse = {props.handleCollapse}
                     
