@@ -21,24 +21,24 @@ const Preview = props => {
 
             <ul className="socialKit">
 
-                <li className="list deactivate" id="btn-phone">
-                    <a className="btn" id="phone">
-                        <i className="fas fa-mobile-alt" id="icon"></i>
+                <li className="list" id="btn-phone">
+                    <a className="btn" id="phone" >
+                        <i className={`fas fa-mobile-alt ${props.phone === '' ? "deactivate" : "activate"}`} id="icon"></i>
                     </a>
                 </li>
-                <li className="list deactivate" id="btn-email">
+                <li className="list" id="btn-email">
                     <a className="btn" id="email">
-                        <i className="far fa-envelope" id="icon"></i>
+                        <i className={`far fa-envelope ${props.email === '' ? "deactivate" : "activate"}`} id="icon"></i>
                     </a>
                 </li>
-                <li className="list deactivate" id="btn-linkedin">
+                <li className="list" id="btn-linkedin">
                     <a className="btn" id="linkedin" target="_blank">
-                        <i className="fab fa-linkedin-in" id="icon"></i>
+                        <i className={`fab fa-linkedin-in ${props.linkedin === '' ? "deactivate" : "activate"}`} id="icon"></i>
                     </a>
                 </li>
-                <li className="list deactivate" id="btn-github">
+                <li className="list" id="btn-github">
                     <a className="btn" id="github" target="_blank">
-                        <i className="fab fa-github-alt" id="icon"></i>
+                        <i className={`fab fa-github-alt ${props.github === '' ? "deactivate" : "activate"}`} id="icon"></i>
                     </a>
                 </li>
             </ul>

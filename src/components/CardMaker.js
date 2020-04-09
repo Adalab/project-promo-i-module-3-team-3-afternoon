@@ -6,7 +6,8 @@ import Preview from "./Preview";
 import Footer from "./Footer";
 import DefaultImage from "./DefaultImage";
 // import {fetchCardData} from '../services/CardService';
-import CollapseList from './CollapseList';
+import CollapseList from "./CollapseList";
+
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -14,57 +15,76 @@ class CardMaker extends React.Component {
     //falta bindear por eso no funciona
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
+    this.handleInputValue = this.handleInputValue.bind(this);
     this.state = {
-      activePanel: '',
-      palette:'palette1',
-      
-    }
+      activePanel: "",
+      palette: "palette1",
+      userInfo: {
+        name: "",
+        job: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
+      },
+    };
   }
 
   handleCollapse(targetId) {
-    console.log(targetId)
-    if (targetId !== this.state.activePanel){
-      this.setState({activePanel:targetId})
-    } else{
-      this.setState({activePanel:''})
+    console.log(targetId);
+    if (targetId !== this.state.activePanel) {
+      this.setState({ activePanel: targetId });
+    } else {
+      this.setState({ activePanel: "" });
     }
   }
 
-
-  handleRadioChange(target){
-    this.setState(prevState => {
-      return prevState.palette= target.value
+  handleRadioChange(target) {
+    this.setState((prevState) => {
+      return (prevState.palette = target.value);
     });
   }
 
-  
+  handleInputValue(inputName, inputValue) {
+    this.setState((prevState) => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          [inputName]: inputValue,
+        },
+      };
+    });
+    console.log(this.state.userInfo);
+  }
 
-  render() {
+  render() { 
     return (
-        <div className="wrapper">
-          <Header image={logo} />
-          <div className="cardWrapper">
-            <Preview userName="Nombre Apellidos"
-                     position="Front End Developer"
-                     paletteValue=""
-                     email="asdasd@dfs.com"
-                     phone="6666666"
-                     linkedin="{userInfo.linkedin}"
-                     github="{userInfo.github}"
-                     avatar="{profile.avatar} "
-                     resetForm="{this.resetForm}"
-                     palette ={this.state.palette}
+      <div className="wrapper">
+        <Header image={logo} />
+        <div className="cardWrapper">
+          <Preview
+            userName={this.state.userInfo.name}
+            position={this.state.userInfo.job}
+            paletteValue=""
+            email={this.state.userInfo.email}
+            phone={this.state.userInfo.phone}
+            linkedin={this.state.userInfo.linkedin}
+            github={this.state.userInfo.github}
+            avatar="{profile.avatar} "
+            resetForm="{this.resetForm}"
+            palette={this.state.palette}
+          />
+          <section className="containerSectionStyles">
+            <CollapseList
+              handleCollapse={this.handleCollapse}
+              activePanel={this.state.activePanel}
+              handleRadioChange={this.handleRadioChange}
+              handleInputValue={this.handleInputValue}
             />
-            <section className="containerSectionStyles">
-              <CollapseList handleCollapse={this.handleCollapse}
-                            activePanel={this.state.activePanel}
-                            handleRadioChange={this.handleRadioChange}
-                            palette ={this.state.palette}
-              />
-            </section>
-          </div>
+          </section>
+        </div>
         <Footer image={logoAdalab} />
-     </div>
+      </div>
     );
   }
 }
