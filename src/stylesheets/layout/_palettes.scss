@@ -1,36 +1,36 @@
 
 
 
-.colorPalette1 {
+ 
   
-  .headline {
+  .palette1{
     border-left: solid 5px $bottonColor !important;
 
     h2 {
       color: $headerColor ;
     }
   }
-}
 
-.colorPalette2 {
-  .headline {
+
+
+  .palette2 {
     border-left: solid 5px $secondPalette !important;
 
     h2 {
       color: $secondPaletteText;
     }
   }
-}
 
-.colorPalette3 {
-  .headline {
+
+
+  .palette3 {
     border-left: solid 5px $thirdPalette !important;
 
     h2 {
       color: $thirdPaletteText;
     }
   }
-}
+
 
 .coloricon1 {
   .btn {

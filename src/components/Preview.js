@@ -10,8 +10,8 @@ const Preview = props => {
 
         <button id="reset" className="buttonReset"> <i className="far fa-trash-alt"></i> reset</button>
 
-        <div className="card" id="cardid">
-            <div className="headline">
+        <div className="card" id="cardid" >
+            <div className={`headline ${props.palette}`}>
                 <h2 className="name" id="cardname">{props.userName === '' ? 'Nombre Apellido' : props.userName}</h2>
                 <h3 className="role" id="cardrole">{props.position === '' ? 'Front-end developer' : props.position}</h3>
             </div>

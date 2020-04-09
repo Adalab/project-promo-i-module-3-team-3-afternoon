@@ -18,7 +18,8 @@ const CollapseList = props => {
                     icon = 'far fa-object-ungroup'
       >
          <Design handleRadioChange = {props.handleRadioChange}
-                  palette ={props.palette}/>
+                  palette ={props.palette}
+                  classPalette={props.classPalette}/>
       </CollapseItem>
       <CollapseItem handleCollapse = {props.handleCollapse}
                     

@@ -16,7 +16,8 @@ class CardMaker extends React.Component {
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.state = {
       activePanel: '',
-      palette:''
+      palette:'palette1',
+      
     }
   }
 
@@ -52,12 +53,14 @@ class CardMaker extends React.Component {
                      github="{userInfo.github}"
                      avatar="{profile.avatar} "
                      resetForm="{this.resetForm}"
+                     palette ={this.state.palette}
             />
             <section className="containerSectionStyles">
               <CollapseList handleCollapse={this.handleCollapse}
                             activePanel={this.state.activePanel}
                             handleRadioChange={this.handleRadioChange}
                             palette ={this.state.palette}
+                            colorPalette={this.state.colorPalette}
               />
             </section>
           </div>
