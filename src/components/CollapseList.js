@@ -28,6 +28,9 @@ const CollapseList = props => {
       >
         <FormFill
           handleInputValue={props.handleInputValue}
+          avatar={props.avatar} 
+          isAvatarDefault={props.isAvatarDefault} 
+          updateAvatar={props.updateAvatar}
         />
       </CollapseItem>
       <CollapseItem

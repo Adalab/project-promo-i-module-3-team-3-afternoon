@@ -4,7 +4,7 @@ import logo from "../images/tarjetas-molonas.png";
 import logoAdalab from "../images/logo-adalab.png";
 import Preview from "./Preview";
 import Footer from "./Footer";
-import DefaultImage from "./DefaultImage";
+import defaultImage from "./DefaultImage";
 // import {fetchCardData} from '../services/CardService';
 import CollapseList from "./CollapseList";
 
@@ -16,6 +16,7 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
     this.state = {
       activePanel: "",
       palette: "palette1",
@@ -26,7 +27,15 @@ class CardMaker extends React.Component {
         email: "",
         linkedin: "",
         github: "",
+        photo: defaultImage
       },
+      
+      profile: {
+        avatar: defaultImage
+      },
+
+      isAvatarDefault: true,
+
     };
   }
 
@@ -57,6 +66,21 @@ class CardMaker extends React.Component {
     console.log(this.state.userInfo);
   }
 
+  updateAvatar(img) {
+    const {profile} = this.state;
+    this.setState(prevState => {
+      let newProfile = {...profile, avatar: img};
+      let newUserInfo = prevState.userInfo; 
+      return {
+        profile: newProfile,
+        isAvatarDefault: false,
+        validAvatar: true,
+        userInfo: {...newUserInfo, photo: img}
+      }
+    });
+};
+
+
   render() { 
     return (
       <div className="wrapper">
@@ -70,7 +94,7 @@ class CardMaker extends React.Component {
             phone={this.state.userInfo.phone}
             linkedin={this.state.userInfo.linkedin}
             github={this.state.userInfo.github}
-            avatar="{profile.avatar} "
+            avatar={this.state.profile.avatar}
             resetForm="{this.resetForm}"
             palette={this.state.palette}
           />
@@ -81,6 +105,9 @@ class CardMaker extends React.Component {
               handleRadioChange={this.handleRadioChange}
               handleInputValue={this.handleInputValue}
               palette={this.state.palette}
+              avatar={this.state.profile.avatar} 
+              isAvatarDefault={this.state.isAvatarDefault} 
+              updateAvatar={this.updateAvatar} 
             />
           </section>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import FormInput from './FormInput';
-import GetAvatar from "./GetAvatar";
+import GetAvatar from './GetAvatar';
 
 const FormFill = props => {
   return (
@@ -32,7 +32,12 @@ const FormFill = props => {
         />
 
         <div className="addImage">
-          <GetAvatar />
+          <GetAvatar
+           avatar={props.avatar} 
+           isAvatarDefault={props.isAvatarDefault} 
+           updateAvatar={props.updateAvatar} 
+           />
+
         </div>
 
         <FormInput
