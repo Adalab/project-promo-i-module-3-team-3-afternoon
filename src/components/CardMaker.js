@@ -80,6 +80,7 @@ class CardMaker extends React.Component {
               activePanel={this.state.activePanel}
               handleRadioChange={this.handleRadioChange}
               handleInputValue={this.handleInputValue}
+              palette={this.state.palette}
             />
           </section>
         </div>
