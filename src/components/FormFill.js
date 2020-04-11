@@ -17,6 +17,7 @@ const FormFill = props => {
           value={props.name}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          handleReset={props.handleReset}
         />
         <FormInput
           section="professionCard"
@@ -29,6 +30,7 @@ const FormFill = props => {
           value={props.job}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          handleReset={props.handleReset}
         />
 
         <div className="addImage">
@@ -36,6 +38,7 @@ const FormFill = props => {
            avatar={props.avatar} 
            isAvatarDefault={props.isAvatarDefault} 
            updateAvatar={props.updateAvatar} 
+           handleReset={props.handleReset}
            />
 
         </div>
@@ -51,6 +54,7 @@ const FormFill = props => {
           value={props.email}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          handleReset={props.handleReset}
         />
 
         <FormInput
@@ -63,6 +67,7 @@ const FormFill = props => {
           name="phone"
           value={props.phone}
           handleInputValue={props.handleInputValue}
+          handleReset={props.handleReset}
         />
         <FormInput
           section="linkedinCard"
@@ -74,6 +79,7 @@ const FormFill = props => {
           name="linkedin"
           value={props.linkedin}
           handleInputValue={props.handleInputValue}
+          handleReset={props.handleReset}
         />
 
         <FormInput

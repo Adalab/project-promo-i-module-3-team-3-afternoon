@@ -26,7 +26,7 @@ const Design = props => {
              type="radio" 
              value="palette1" 
              name="colorCard" 
-             onChange={handleRadioChange} 
+             onClick={handleRadioChange} 
              checked={props.palette === 'palette1'}
              />
 
@@ -43,7 +43,7 @@ const Design = props => {
              type="radio" 
              value="palette2" 
              name="colorCard"
-             onChange={handleRadioChange}  
+             onClick={handleRadioChange}  
              checked={props.palette === 'palette2'}
              />
              <label className="colorPalette">
@@ -59,7 +59,7 @@ const Design = props => {
              value="palette3" 
              name="colorCard" 
              checked={props.palette === 'palette3'}
-             onChange={handleRadioChange} />
+             onClick={handleRadioChange} />
              <label className="colorPalette">
                  <div className="palette containerColorPalette7"></div>
                  <div className="palette containerColorPalette8"></div>
