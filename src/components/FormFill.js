@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
 import FormInput from './FormInput';
-import GetAvatar from "./GetAvatar";
+import GetAvatar from './GetAvatar';
+import PropTypes from 'prop-types';
 
 const FormFill = props => {
   return (
@@ -86,5 +87,13 @@ const FormFill = props => {
     </div>
   );
 };
+
+FormFill.propTypes = {
+      name: PropTypes.string,
+      job: PropTypes.string,
+      phone: PropTypes.number,
+      linkedin: PropTypes.string,
+      github: PropTypes.string
+}
 
 export default FormFill;
