@@ -17,6 +17,7 @@ class CardMaker extends React.Component {
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.resetForm = this.resetForm.bind(this);
     this.state = {
       activePanel: "",
       palette: "palette1",
@@ -78,7 +79,31 @@ class CardMaker extends React.Component {
         userInfo: {...newUserInfo, photo: img}
       }
     });
-};
+  };
+
+  resetForm(){
+    this.setState({
+        
+        activePanel: "",
+        palette: "palette1",
+        userInfo: {
+          name: "",
+          job: "",
+          phone: "",
+          email: "",
+          linkedin: "",
+          github: "",
+          photo: defaultImage
+        },
+        
+        profile: {
+          avatar: defaultImage
+        },
+  
+        isAvatarDefault: true,
+      
+    })
+}
 
 
   render() { 
@@ -95,7 +120,7 @@ class CardMaker extends React.Component {
             linkedin={this.state.userInfo.linkedin}
             github={this.state.userInfo.github}
             avatar={this.state.profile.avatar}
-            resetForm="{this.resetForm}"
+            resetForm={this.resetForm}
             palette={this.state.palette}
           />
           <section className="containerSectionStyles">
