@@ -5,8 +5,8 @@ import logoAdalab from "../images/logo-adalab.png";
 import Preview from "./Preview";
 import Footer from "./Footer";
 import defaultImage from "./DefaultImage";
-// import {fetchCardData} from '../services/CardService';
 import CollapseList from "./CollapseList";
+import {fethCard} from '../services/CardService'
 
 
 class CardMaker extends React.Component {
@@ -20,8 +20,9 @@ class CardMaker extends React.Component {
     this.resetForm = this.resetForm.bind(this);
     this.state = {
       activePanel: "",
-      palette: "palette1",
+      
       userInfo: {
+        palette: "palette1",
         name: "",
         job: "",
         phone: "",
@@ -40,6 +41,19 @@ class CardMaker extends React.Component {
     };
   }
 
+//   sendRequest(json){
+//     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+//       method: 'POST',
+//       body: JSON.stringify(json),
+//       headers: {
+//         'content-type': 'application/json'
+//       },
+//     })
+//       .then(function(resp) { return resp.json(); })
+//       .then(function(result) { showURL(result); })
+//       .catch(function(error) { console.log(error); });
+// }
+
   handleCollapse(targetId) {
     console.log(targetId);
     if (targetId !== this.state.activePanel) {
@@ -51,7 +65,7 @@ class CardMaker extends React.Component {
 
   handleRadioChange(target) {
     this.setState((prevState) => {
-      return (prevState.palette = target.value);
+      return (prevState.userInfo.palette = target.value);
     });
   }
 
@@ -85,8 +99,9 @@ class CardMaker extends React.Component {
     this.setState({
         
         activePanel: "",
-        palette: "palette1",
+        
         userInfo: {
+          palette: "palette1",
           name: "",
           job: "",
           phone: "",
@@ -121,7 +136,7 @@ class CardMaker extends React.Component {
             github={this.state.userInfo.github}
             avatar={this.state.profile.avatar}
             resetForm={this.resetForm}
-            palette={this.state.palette}
+            palette={this.state.userInfo.palette}
           />
           <section className="containerSectionStyles">
             <CollapseList
@@ -129,7 +144,7 @@ class CardMaker extends React.Component {
               activePanel={this.state.activePanel}
               handleRadioChange={this.handleRadioChange}
               handleInputValue={this.handleInputValue}
-              palette={this.state.palette}
+              palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar} 
               isAvatarDefault={this.state.isAvatarDefault} 
               updateAvatar={this.updateAvatar} 
