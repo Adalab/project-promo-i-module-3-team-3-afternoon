@@ -29,12 +29,8 @@ const FormInput = (props) => {
   );
 };
 
-FormFill.propTypes = {
-  name: PropTypes.string,
-  job: PropTypes.string,
-  phone: PropTypes.number,
-  linkedin: PropTypes.string,
-  github: PropTypes.string
+FormInput.propTypes = {
+  name: PropTypes.string
 }
 
 export default FormInput;

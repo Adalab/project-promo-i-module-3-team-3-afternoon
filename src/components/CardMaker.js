@@ -16,7 +16,7 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
-    this.validateForm=this.validateForm(this);
+    this.validateForm=this.validateForm.bind(this);//<---estaba mal hecho el bind por eso no funcionaba
    
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
@@ -32,11 +32,9 @@ class CardMaker extends React.Component {
         github: "",
         photo: defaultImage
       },
-      
       profile: {
         avatar: defaultImage
       },
-
       isAvatarDefault: true,
       isValidated:false,
 
@@ -71,9 +69,11 @@ class CardMaker extends React.Component {
   }
   
   validateForm(){
-    const { name, job, phone, email } = this.state.userInfo;
-    const isValidated = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0);
-    this.setState({isValidated:isValidated})
+    const { name, job, phone, email,linkedin,github } = this.state.userInfo;
+    //el truqui está aquí isValidated vale true si se cumple todo lo que tiene dentro mientras ocurran los eventos onChnage en los inputs
+    //y esto no sea true el valor que le pasamos a isValidated es todo el rato false
+    const isValidatedValue = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0) && (linkedin.length > 0) && (github.length > 0);
+    this.setState({isValidated:isValidatedValue})//mi propiedad isValidated del estado vale lo que valga mi variable (true o false)
   }
 
   updateAvatar(img) {

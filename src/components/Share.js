@@ -5,18 +5,16 @@ class Share extends React.Component {
         super(props);
       }
     render() {
+        console.log(this.props)
         return (
-            // <Collapsibles/>
-    //    <div className="containerShareTop">
-    //              <div className="subContainer">
-    //                  <div><i className="icon fas fa-share-alt"></i></div>
-    //                  <p className="title">COMPARTE</p>
-    //              </div>
-    //              <div className="iconDirection"><i className="iconDirection3 fas fa-chevron-down"></i></div>
-    //          </div> */
             <div className="containerShareBottom">
                 <p id="error-message" className="hiddenMessage">{this.props.requiredMessage}</p>
-                <button id="buttonValidation" className="button buttonShare buttonDisabled" type="button" disabled={this.props.isValidated}>
+                {/*para activar o desactivar disabled por medio de JS lo inicializo como disabled=true, es decir mi botón ESTÁ DESACTIVADO cuando disabled es true
+                como la primera vez que entro a mi app isValidated es false tengo que decirle a disabled lo contrario de lo que vale isValidated, es decir !this.props.isValidated
+                así disabled será true, luego el valor se seteará con la validación
+                en cuanto a la clase escribo el ternario para añadirle o no la clase buttonDisabled en función de si isValidated es true o false
+                */}
+                <button id="buttonValidation" className={`button buttonShare ${!this.props.isValidated ? 'buttonDisabled' : ''}`} type="button" disabled={!this.props.isValidated}>
                     <i className="iconSend far fa-address-card"></i>
                     <span className="textButton" >CREAR TARJETA</span>
                 </button>
