@@ -16,9 +16,9 @@ class Share extends React.Component {
     //          </div> */
             <div className="containerShareBottom">
                 <p id="error-message" className="hiddenMessage">{this.props.requiredMessage}</p>
-                <button id="buttonValidation" className="button buttonShare buttonDisabled" type="button" disabled>
+                <button id="buttonValidation" className="button buttonShare buttonDisabled" type="button" disabled={this.props.isValidated}>
                     <i className="iconSend far fa-address-card"></i>
-                    <span className="textButton">CREAR TARJETA</span>
+                    <span className="textButton" >CREAR TARJETA</span>
                 </button>
                 <div className="card__share hidden" id="card-share">
                     <p>La tarjeta ha sido creada:</p>

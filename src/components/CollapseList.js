@@ -40,7 +40,10 @@ const CollapseList = props => {
         title="COMPARTE"
         icon="fas fa-share-alt"
       >
-        <Share />
+        <Share 
+        handleInputValue = {props.handleInputValue}
+        
+        isValidated={props.isValidated}/>
       </CollapseItem>
     </div>
   );

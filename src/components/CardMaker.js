@@ -16,6 +16,8 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.validateForm=this.validateForm(this);
+   
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.state = {
@@ -36,6 +38,7 @@ class CardMaker extends React.Component {
       },
 
       isAvatarDefault: true,
+      isValidated:false,
 
     };
   }
@@ -63,8 +66,14 @@ class CardMaker extends React.Component {
           [inputName]: inputValue,
         },
       };
-    });
+    }, ()=>this.validateForm());
     console.log(this.state.userInfo);
+  }
+  
+  validateForm(){
+    const { name, job, phone, email } = this.state.userInfo;
+    const isValidated = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0);
+    this.setState({isValidated:isValidated})
   }
 
   updateAvatar(img) {
@@ -133,6 +142,9 @@ class CardMaker extends React.Component {
               avatar={this.state.profile.avatar} 
               isAvatarDefault={this.state.isAvatarDefault} 
               updateAvatar={this.updateAvatar} 
+              handleInputValue = {this.handleInputValue}
+              validateForm = {this.validateForm}
+              isValidated = {this.state.isValidated}
             />
           </section>
         </div>
