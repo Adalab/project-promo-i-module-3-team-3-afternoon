@@ -41,8 +41,8 @@ const CollapseList = props => {
         icon="fas fa-share-alt"
       >
         <Share 
-        handleInputValue = {props.handleInputValue}
-        
+        handleInputValue = {props.handleInputValue}  
+        validateForm={props.validateForm}  
         isValidated={props.isValidated}/>
       </CollapseItem>
     </div>

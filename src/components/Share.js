@@ -14,7 +14,7 @@ class Share extends React.Component {
                 así disabled será true, luego el valor se seteará con la validación
                 en cuanto a la clase escribo el ternario para añadirle o no la clase buttonDisabled en función de si isValidated es true o false
                 */}
-                <button id="buttonValidation" className={`button buttonShare ${!this.props.isValidated ? 'buttonDisabled' : ''}`} type="button" disabled={!this.props.isValidated}>
+                <button id="buttonValidation" className={`button buttonShare ${!this.props.isValidated ? 'buttonDisabled' : ''}`} type="button" disabled={!this.props.isValidated} onClick={this.props.validateForm}>
                     <i className="iconSend far fa-address-card"></i>
                     <span className="textButton" >CREAR TARJETA</span>
                 </button>
