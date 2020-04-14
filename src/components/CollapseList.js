@@ -40,7 +40,9 @@ const CollapseList = props => {
         title="COMPARTE"
         icon="fas fa-share-alt"
       >
-        <Share />
+        <Share
+        sendRequest={props.sendRequest}
+        userInfo={props.userInfo} />
       </CollapseItem>
     </div>
   );

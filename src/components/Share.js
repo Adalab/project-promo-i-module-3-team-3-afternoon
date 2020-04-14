@@ -4,6 +4,13 @@ import React from 'react';
 class Share extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSendRequest = this.handleSendRequest.bind(this);
+      }
+
+      handleSendRequest(){
+        let json = this.props.userInfo;
+        console.log(json);
+          this.props.sendRequest(json)
       }
     render() {
         return (
@@ -17,7 +24,7 @@ class Share extends React.Component {
     //          </div> */
             <div className="containerShareBottom">
                 <p id="error-message" className="hiddenMessage">{this.props.requiredMessage}</p>
-                <button id="buttonValidation" className="button buttonShare buttonDisabled" type="button">
+                <button id="buttonValidation" className="button buttonShare" type="button" onclick={this.handleSendRequest}>
                     <i className="iconSend far fa-address-card"></i>
                     <span className="textButton">CREAR TARJETA</span>
                 </button>

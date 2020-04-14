@@ -18,6 +18,8 @@ class CardMaker extends React.Component {
     this.handleInputValue = this.handleInputValue.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
+    this.showURL = this.showURL.bind(this);
     this.state = {
       activePanel: "",
       
@@ -41,18 +43,37 @@ class CardMaker extends React.Component {
     };
   }
 
-//   sendRequest(json){
-//     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-//       method: 'POST',
-//       body: JSON.stringify(json),
-//       headers: {
-//         'content-type': 'application/json'
-//       },
-//     })
-//       .then(function(resp) { return resp.json(); })
-//       .then(function(result) { showURL(result); })
-//       .catch(function(error) { console.log(error); });
-// }
+   
+
+  sendRequest(json){
+    
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(json),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+      .then(function(resp) { return resp.json(); })
+      .then(function(result) { this.showURL(result); })
+      .catch(function(error) { console.log(error); });
+}
+
+
+ showURL(result){
+  // if(result.success){
+  //   responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+  //   twitterShare(result.cardURL);
+  // }else{
+  //   responseURL.innerHTML = 'ERROR:' + result.error;
+  // }
+  if(result.success){
+    alert('ok')
+  }else{
+    alert('error')
+  }
+}
+
 
   handleCollapse(targetId) {
     console.log(targetId);
@@ -148,6 +169,8 @@ class CardMaker extends React.Component {
               avatar={this.state.profile.avatar} 
               isAvatarDefault={this.state.isAvatarDefault} 
               updateAvatar={this.updateAvatar} 
+              sendRequest={this.sendRequest}
+              userInfo={this.state.userInfo}
             />
           </section>
         </div>
