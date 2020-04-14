@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const FormInput = (props) => {
   const updateInputValue = (evt) => {
@@ -27,5 +28,13 @@ const FormInput = (props) => {
     </div>
   );
 };
+
+FormFill.propTypes = {
+  name: PropTypes.string,
+  job: PropTypes.string,
+  phone: PropTypes.number,
+  linkedin: PropTypes.string,
+  github: PropTypes.string
+}
 
 export default FormInput;
