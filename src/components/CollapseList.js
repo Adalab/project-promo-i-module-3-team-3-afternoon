@@ -43,7 +43,12 @@ const CollapseList = props => {
         <Share 
         handleInputValue = {props.handleInputValue}  
         validateForm={props.validateForm}  
-        isValidated={props.isValidated}/>
+        isValidated={props.isValidated}
+        cardURL={props.cardURL}
+        fetchCardData={props.fetchCardData}
+        cardSuccess={props.cardSuccess}
+        isLoading={props.isLoading}
+              />
       </CollapseItem>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import logo from '../images/tarjetas-molonas.png';
 import logoAdalab from '../images/logo-adalab.png';
 import LandingMain from './LandingMain';
@@ -13,19 +14,19 @@ class App extends React.Component {
 
   render() {
     return (
-      
-        // <div className="landing">
-        //   <LandingMain image={logo}
-        //   />
-        //   <Footer image={logoAdalab}
-        //   />
-        // </div>
-        
-        
-        <CardMaker
-        />
-      
-
+      <div className="App">
+      <Switch>
+      <Route exact path="/">
+      <div className="landing">
+      <LandingMain image={logo} />
+       <Footer image={logoAdalab}/>
+        </div>
+        </Route>
+        <Route exact path="/Card">
+        <CardMaker/>
+        </Route>
+        </Switch>
+        </div >
       );
     }
 }

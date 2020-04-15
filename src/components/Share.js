@@ -3,7 +3,17 @@ import React from 'react';
 class Share extends React.Component {
     constructor(props) {
         super(props);
+        this.fetchCardData = this.fetchCardData.bind(this);
       }
+
+      fetchCardData = event => {
+        if(this.props.isValidated === true){
+            this.props.fetchCardData()
+        } else {
+            event.preventDefault();
+        };
+    };
+
     render() {
         console.log(this.props)
         return (
@@ -14,7 +24,7 @@ class Share extends React.Component {
                 así disabled será true, luego el valor se seteará con la validación
                 en cuanto a la clase escribo el ternario para añadirle o no la clase buttonDisabled en función de si isValidated es true o false
                 */}
-                <button id="buttonValidation" className={`button buttonShare ${!this.props.isValidated ? 'buttonDisabled' : ''}`} type="button" disabled={!this.props.isValidated} onClick={this.props.validateForm}>
+                <button id="buttonValidation" className={`button buttonShare ${!this.props.isValidated ? 'buttonDisabled' : ''}`} type="button" disabled={!this.props.isValidated} onClick={this.props.validateForm} onSubmit={this.fetchCardData}>
                     <i className="iconSend far fa-address-card"></i>
                     <span className="textButton" >CREAR TARJETA</span>
                 </button>

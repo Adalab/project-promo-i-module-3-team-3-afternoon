@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class LandingMain extends React.Component {
   render() {
@@ -20,24 +21,23 @@ class LandingMain extends React.Component {
             <span>forma fácil y cómoda</span>{" "}
           </p>
           <nav className="main__icons">
-            <a className="main__icons-1" href="../cards.html#design">
+            <Link className="main__icons-1" to="/Card" title="Diseña">
               <i className="far fa-object-ungroup" aria-hidden="true"></i>
               <p className="main__text--icons">Diseña</p>
-            </a>
-            <a className="main__icons-2" href="../cards.html#fill">
+            </Link>
+            <Link className="main__icons-2" to="/Card" title="Diseña">
               <i className="far fa-keyboard"></i>
               <p className="main__text--icons">Rellena</p>
-            </a>
-            <a className="main__icons-3" href="../cards.html#share">
+            </Link>
+            <Link className="main__icons-3" to="/Card" title="Diseña">
               <i className="fas fa-share-alt" aria-hidden="true"></i>
               <p className="main__text--icons">Comparte</p>
-            </a>
+            </Link>
           </nav>
           <div className="main__button">
-            <a className="main__button--a" href="../cards.html" title="comenzar">
-              {" "}
-              Comenzar
-            </a>
+            <Link className="link-button" to="/Card" title="comenzar">
+              comenzar
+            </Link>
           </div>
         </main>
       </div>
