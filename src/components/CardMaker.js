@@ -12,7 +12,7 @@ import {fethCard} from '../services/CardService'
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
-    //falta bindear por eso no funciona
+    
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
@@ -119,7 +119,7 @@ class CardMaker extends React.Component {
   resetForm(){
     this.setState({
         
-        activePanel: "",
+        // activePanel: "",
         
         userInfo: {
           palette: "palette1",
