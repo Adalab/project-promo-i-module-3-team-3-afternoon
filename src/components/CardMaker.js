@@ -6,6 +6,7 @@ import Preview from "./Preview";
 import Footer from "./Footer";
 import defaultImage from "./DefaultImage";
 import CollapseList from "./CollapseList";
+import {fetchCardData} from '../services/CardFetch';
 
 
 class CardMaker extends React.Component {
@@ -18,6 +19,8 @@ class CardMaker extends React.Component {
     this.validateForm=this.validateForm.bind(this);//<---estaba mal hecho el bind por eso no funcionaba
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.fetchCardData = this.fetchCardData.bind(this);
+    this.setURL = this.setURL.bind(this);
     this.state = {
       activePanel: "",
       
@@ -36,6 +39,9 @@ class CardMaker extends React.Component {
       },
       isAvatarDefault: true,
       isValidated:false,
+      cardURL: '',
+      isLoading: false,
+      cardSuccess: ''
 
     };
   }
@@ -113,6 +119,60 @@ class CardMaker extends React.Component {
         
     })
 }
+componentDidMount(){
+  const data = JSON.parse(localStorage.getItem('data'));
+
+  if(data !== null){
+      this.setState({
+          userInfo: {
+              "palette": data.palette !=='' ? data.palette : '1',
+              "name": data.name,
+              "job": data.job,
+              "phone": data.phone,
+              "email": data.email,
+              "linkedin": data.linkedin,
+              "github": data.github,
+              "photo": data.photo !== '' ? data.photo : defaultImage
+          },
+          profile: {
+              avatar: data.photo
+          },
+          isAvatarDefault: data.photo !== defaultImage ? false : true,
+          cardURL: ''
+      })
+  }
+}
+
+componentDidUpdate(){
+  localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+
+}
+
+fetchCardData(){
+  const json = JSON.parse(localStorage.getItem('data'));
+  fetchCardData(json)
+  .then(result => this.setURL(result))
+  .catch(error => console.log(error));
+
+  this.setState({
+      isLoading: true
+  })
+}
+
+setURL(result){
+  if(result.success){
+      this.setState({
+          cardURL: result.cardURL,
+          isLoading: false,
+          cardSuccess: true
+      })
+  } else {
+      this.setState({
+          cardURL: 'ERROR:' + result.error,
+          isLoading: false
+      })
+  }
+}
 
 
   render() { 
@@ -145,6 +205,10 @@ class CardMaker extends React.Component {
               handleInputValue = {this.handleInputValue}
               validateForm = {this.validateForm}
               isValidated = {this.state.isValidated}
+              cardURL={this.state.cardURL}
+              fetchCardData={this.fetchCardData}
+              cardSuccess={this.state.cardSuccess}
+              isLoading={this.state.isLoading}
             />
           </section>
         </div>

@@ -48,6 +48,7 @@ const CollapseList = props => {
         fetchCardData={props.fetchCardData}
         cardSuccess={props.cardSuccess}
         isLoading={props.isLoading}
+        
               />
       </CollapseItem>
     </div>

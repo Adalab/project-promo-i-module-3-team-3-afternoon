@@ -1,4 +1,4 @@
-.btn-twitter{
+.button-twitter{
     background: $color-twitter;
     border-radius: 3px;
     width: 181px;
@@ -6,6 +6,9 @@
     color: $whiteColor;
     font-size: rem(14);
     line-height: 30px;
+    margin: 20px auto;
+    padding: 7px;
+    margin-left: 30px;
 }
 
 .card__share{
@@ -15,20 +18,21 @@
     p{
         font-size: rem(18);
         font-weight: 600;
-        margin: 0px;
+        margin: 10px 0 10px 0;
     }
 
     p.card__link{
         font-size: rem(12);
         color: $primaryColor;
-        margin: 5px 0 10px 0;
+        margin: 5px 0 20px 0;
+        
     }
-
+}
     .btn-twitter{
         margin: 20px auto;
         
     }
-}
+
 .containerShareBottom{
     .hidden1{
         display: none;
