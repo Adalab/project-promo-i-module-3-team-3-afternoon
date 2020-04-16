@@ -5,7 +5,6 @@ import logoAdalab from "../images/logo-adalab.png";
 import Preview from "./Preview";
 import Footer from "./Footer";
 import defaultImage from "./DefaultImage";
-import {fetchCardData} from '../services/Fetch';
 import CollapseList from "./CollapseList";
 
 
@@ -17,8 +16,6 @@ class CardMaker extends React.Component {
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
     this.validateForm=this.validateForm.bind(this);//<---estaba mal hecho el bind por eso no funcionaba
-    this.fetchCardData = this.fetchCardData.bind(this);
-    this.setURL = this.setURL.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.state = {
@@ -38,9 +35,6 @@ class CardMaker extends React.Component {
       },
       isAvatarDefault: true,
       isValidated:false,
-      cardURL: '',
-      isLoading: false,
-      cardSuccess: ''
 
     };
   }
@@ -97,7 +91,7 @@ class CardMaker extends React.Component {
   resetForm(){
     this.setState({
         
-        activePanel: "",
+        // activePanel: "",
         palette: "palette1",
         userInfo: {
           name: "",
@@ -116,31 +110,6 @@ class CardMaker extends React.Component {
         isAvatarDefault: true,
         
     })
-}
-fetchCardData(){
-  const json = JSON.parse(localStorage.getItem('data'));
-  fetchCardData(json)
-  .then(result => this.setURL(result))
-  .catch(error => console.log(error));
-
-  this.setState({
-      isLoading: true
-  })
-}
-
-setURL(result){
-  if(result.success){
-      this.setState({
-          cardURL: result.cardURL,
-          isLoading: false,
-          cardSuccess: true
-      })
-  } else {
-      this.setState({
-          cardURL: 'ERROR:' + result.error,
-          isLoading: false
-      })
-  }
 }
 
 
@@ -174,10 +143,6 @@ setURL(result){
               handleInputValue = {this.handleInputValue}
               validateForm = {this.validateForm}
               isValidated = {this.state.isValidated}
-              cardURL={this.state.cardURL}
-              fetchCardData={this.fetchCardData}
-              cardSuccess={this.state.cardSuccess}
-              isLoading={this.state.isLoading}
             />
           </section>
         </div>
