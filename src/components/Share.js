@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from '../images/loader-card.svg';
 
 class Share extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class Share extends React.Component {
                     <i className="iconSend far fa-address-card"></i>
                     <span className="textButton" >CREAR TARJETA</span>
                 </button>
+                <div className={`card-loader ${this.props.isLoading === true ? '' : ' hidden'}`}><img className="card-loader__image" alt="card-lo" src={Loader}></img></div>
                 <div className={`card__share ${this.props.cardSuccess === true ? '' : ' hidden'}`} id="card-share">
                     <p id="card-link" className="p.card__link">La tarjeta ha sido creada:</p>
                     <a href={this.props.cardURL} target="_blank"><p className="card__link">{this.props.cardURL}</p></a>       

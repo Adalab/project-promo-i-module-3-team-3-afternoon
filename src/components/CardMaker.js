@@ -12,11 +12,11 @@ import {fetchCardData} from '../services/CardFetch';
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
-    //falta bindear por eso no funciona
+  
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
-    this.validateForm=this.validateForm.bind(this);//<---estaba mal hecho el bind por eso no funcionaba
+    this.validateForm = this.validateForm.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.fetchCardData = this.fetchCardData.bind(this);
@@ -97,8 +97,6 @@ class CardMaker extends React.Component {
 
   resetForm(){
     this.setState({
-        
-        // activePanel: "",
         
         userInfo: {
           palette: "palette1",
@@ -213,7 +211,7 @@ setURL(result){
             />
           </section>
         </div>
-        <Footer image={logoAdalab} />
+        <Footer image={logoAdalab}/>
       </div>
     );
   }

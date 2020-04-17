@@ -16,7 +16,7 @@ const Preview = props => {
                 <h3 className="role" id="cardrole">{props.position === '' ? 'Front-end developer' : props.position}</h3>
             </div>
 
-            <div className = "inputImage" id="inputImage"style={{backgroundImage: `url(${props.avatar})`}}></div>
+            <div className = "inputImage" id="inputImage"style={{backgroundImage:`url(${props.avatar})`}}></div>
 
             <ul className="socialKit">
 
