@@ -31,6 +31,7 @@ const CollapseList = props => {
           avatar={props.avatar} 
           isAvatarDefault={props.isAvatarDefault} 
           updateAvatar={props.updateAvatar}
+          userInfo={props.userInfo}
         />
       </CollapseItem>
       <CollapseItem

@@ -209,6 +209,7 @@ setURL(result){
               fetchCardData={this.fetchCardData}
               cardSuccess={this.state.cardSuccess}
               isLoading={this.state.isLoading}
+              userInfo={this.state.userInfo}
             />
           </section>
         </div>

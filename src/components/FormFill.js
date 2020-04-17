@@ -14,9 +14,10 @@ const FormFill = props => {
           placeholder=" Ej: Idelisa Bonnelly"
           type="text"
           name="name"
-          value={props.name}
+          value={props.userInfo.name}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          
         />
         <FormInput
           section="professionCard"
@@ -26,7 +27,7 @@ const FormFill = props => {
           placeholder=" Ej: Front-end Developer"
           type="text"
           name="job"
-          value={props.job}
+          value={props.userInfo.job}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
         />
@@ -48,7 +49,7 @@ const FormFill = props => {
           placeholder=" Ej: IdelisaBonnelly@gmail.com "
           type="email"
           name="email"
-          value={props.email}
+          value={props.userInfo.email}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
         />
@@ -61,7 +62,7 @@ const FormFill = props => {
           placeholder=" Ej: 670 777 444"
           type="tel"
           name="phone"
-          value={props.phone}
+          value={props.userInfo.phone}
           handleInputValue={props.handleInputValue}
         />
         <FormInput
@@ -72,7 +73,7 @@ const FormFill = props => {
           placeholder=" Ej: linkedin.com/in/Idelisa.Bonnelly"
           type="text"
           name="linkedin"
-          value={props.linkedin}
+          value={props.userInfo.linkedin}
           handleInputValue={props.handleInputValue}
         />
 
@@ -84,7 +85,7 @@ const FormFill = props => {
           placeholder=" Ej: Idelisa-Bonnelly"
           type="text"
           name="github"
-          value={props.github}
+          value={props.userInfo.github}
           handleInputValue={props.handleInputValue}
         />
       </form>
