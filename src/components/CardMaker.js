@@ -41,8 +41,8 @@ class CardMaker extends React.Component {
       isValidated:false,
       cardURL: '',
       isLoading: false,
-      cardSuccess: ''
-
+      cardSuccess: '',
+      
     };
   }
 
@@ -73,12 +73,13 @@ class CardMaker extends React.Component {
     console.log(this.state.userInfo);
   }
   
+  
   validateForm(){
+  
     const { name, job, phone, email,linkedin,github } = this.state.userInfo;
-    //el truqui está aquí isValidated vale true si se cumple todo lo que tiene dentro mientras ocurran los eventos onChnage en los inputs
-    //y esto no sea true el valor que le pasamos a isValidated es todo el rato false
+    
     const isValidatedValue = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0) && (linkedin.length > 0) && (github.length > 0);
-    this.setState({isValidated:isValidatedValue})//mi propiedad isValidated del estado vale lo que valga mi variable (true o false)
+    this.setState({isValidated:isValidatedValue})
   }
 
   updateAvatar(img) {
@@ -136,10 +137,19 @@ componentDidMount(){
               avatar: data.photo
           },
           isAvatarDefault: data.photo !== defaultImage ? false : true,
-          cardURL: ''
+          cardURL: '',
+         
       })
+    } 
+    if(data !== null){
+    if  ((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
+      this.setState({isValidated: true})
+
+    }
+    }
   }
-}
+      
+
 
 componentDidUpdate(){
   localStorage.setItem('data', JSON.stringify(this.state.userInfo));

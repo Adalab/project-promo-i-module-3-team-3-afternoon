@@ -23,7 +23,7 @@ const FormInput = (props) => {
         required
       />
       <p className="input-error-message hiddenInputMessage">
-        {props.requiredMessage}
+      Completa los campos obligatorios*
       </p>
     </div>
   );
