@@ -115,6 +115,7 @@ class CardMaker extends React.Component {
         },
   
         isAvatarDefault: true,
+        isValidated: false
         
     })
 }
