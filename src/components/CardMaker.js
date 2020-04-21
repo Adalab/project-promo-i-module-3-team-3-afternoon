@@ -23,7 +23,6 @@ class CardMaker extends React.Component {
     this.setURL = this.setURL.bind(this);
     this.state = {
       activePanel: "",
-      
       userInfo: {
         palette: "palette1",
         name: "",
@@ -42,12 +41,10 @@ class CardMaker extends React.Component {
       cardURL: '',
       isLoading: false,
       cardSuccess: '',
-      
     };
   }
 
   handleCollapse(targetId) {
-    console.log(targetId);
     if (targetId !== this.state.activePanel) {
       this.setState({ activePanel: targetId });
     } else {
@@ -69,15 +66,11 @@ class CardMaker extends React.Component {
           [inputName]: inputValue,
         },
       };
-    }, ()=>this.validateForm());
-    console.log(this.state.userInfo);
+    },()=>this.validateForm());
   }
   
-  
   validateForm(){
-  
     const { name, job, phone, email,linkedin,github } = this.state.userInfo;
-    
     const isValidatedValue = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0) && (linkedin.length > 0) && (github.length > 0);
     this.setState({isValidated:isValidatedValue})
   }
@@ -97,91 +90,80 @@ class CardMaker extends React.Component {
   };
 
   resetForm(){
-    this.setState({
-        
-        userInfo: {
-          palette: "palette1",
-          name: "",
-          job: "",
-          phone: "",
-          email: "",
-          linkedin: "",
-          github: "",
-          photo: defaultImage
-        },
-        
-        profile: {
-          avatar: defaultImage
-        },
-  
-        isAvatarDefault: true,
-        isValidated: false
-        
+    this.setState ({
+      userInfo: {
+        palette: "palette1",
+        name: "",
+        job: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
+        photo: defaultImage
+      },
+      profile: {
+        avatar: defaultImage
+      },
+      isAvatarDefault: true,
+      isValidated: false    
     })
-}
-componentDidMount(){
-  const data = JSON.parse(localStorage.getItem('data'));
-
-  if(data !== null){
+  }
+  componentDidMount(){
+    const data = JSON.parse(localStorage.getItem('data'));
+    if(data !== null){
       this.setState({
-          userInfo: {
-              "palette": data.palette !=='' ? data.palette : '1',
-              "name": data.name,
-              "job": data.job,
-              "phone": data.phone,
-              "email": data.email,
-              "linkedin": data.linkedin,
-              "github": data.github,
-              "photo": data.photo !== '' ? data.photo : defaultImage
-          },
-          profile: {
-              avatar: data.photo
-          },
-          isAvatarDefault: data.photo !== defaultImage ? false : true,
-          cardURL: '',
-         
+        userInfo: {
+          "palette": data.palette !=='' ? data.palette : '1',
+          "name": data.name,
+          "job": data.job,
+          "phone": data.phone,
+          "email": data.email,
+          "linkedin": data.linkedin,
+          "github": data.github,
+          "photo": data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+        cardURL: '',
       })
     } 
     if(data !== null){
-    if  ((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
-      this.setState({isValidated: true})
-
-    }
+      if((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
+        this.setState({isValidated: true})
+      }
     }
   }
-      
 
+  componentDidUpdate(){
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
 
-componentDidUpdate(){
-  localStorage.setItem('data', JSON.stringify(this.state.userInfo));
-}
-
-fetchCardData(){
-  const json = JSON.parse(localStorage.getItem('data'));
-  fetchCardData(json)
-  .then(result => this.setURL(result))
-  .catch(error => console.log(error));
-
-  this.setState({
+  fetchCardData(){
+    const json = JSON.parse(localStorage.getItem('data'));
+    fetchCardData(json)
+    .then(result => this.setURL(result))
+    .catch(error => console.log(error));
+    this.setState({
       isLoading: true
-  })
-}
+    })
+  }
 
-setURL(result){
-  if(result.success){
+  setURL(result){
+    if(result.success){
       this.setState({
-          cardURL: result.cardURL,
-          isLoading: false,
-          cardSuccess: true
+        cardURL: result.cardURL,
+        isLoading: false,
+        cardSuccess: true
       })
-  } else {
-      this.setState({
+    } else {
+        this.setState({
           cardURL: 'ERROR:' + result.error,
           isLoading: false
-      })
+        })
+    }
   }
-}
-
 
   render() { 
     const {activePanel, userInfo, profile, isAvatarDefault, isValidated, cardURL, isLoading, cardSuccess} = this.state;
