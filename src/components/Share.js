@@ -5,17 +5,15 @@ class Share extends React.Component {
     constructor(props) {
         super(props);
         this.fetchCardData = this.fetchCardData.bind(this);
-      }
-      fetchCardData = event => {
+    }
+    fetchCardData = event => {
         if(this.props.isValidated === true){
             this.props.fetchCardData()
         } else {
             event.preventDefault();
         };
     };
-
     render() {
-        console.log(this.props)
         return (
             <div className="containerShareBottom">
                 <p id="error-message" className={`error-message ${this.props.isValidated === true ? 'hiddenMessage' : ''}`}>Completa los campos obligatorios*</p>
@@ -30,9 +28,8 @@ class Share extends React.Component {
                     <a href={`https://twitter.com/intent/tweet?text=He%20creado%20esta%20tarjeta%20tan%20GUAY%20con%20Awesome%20Profile%20Cards:%0A;hashtags=Adalab, Migración AwesomeProfileCards, promo Idelisa Equipo 3 ${this.props.cardURL}`} target="_blank" id="twitter-share" className="button-twitter"><i className="fab fa-twitter"></i>Compartir en Twitter</a>
                    
                 </div>
-            </div>    
-           
-        )
+            </div>
+        );
     }
 }
 
