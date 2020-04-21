@@ -15,22 +15,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <Switch>
-      <Route exact path="/">
-      <div className="landing">
-      <LandingMain image={logo} />
-       <Footer image={logoAdalab}/>
-        </div>
-        </Route>
-        <Route exact path="/Card">
-        <CardMaker/>
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <div className="landing">
+              <LandingMain image={logo} />
+              <Footer image={logoAdalab}/>
+            </div>
+          </Route>
+          <Route exact path="/Card">
+            <CardMaker/>
+          </Route>
         </Switch>
-        </div >
-      );
-    }
+      </div >
+    );
+  }
 }
-
 
 export default App;
 

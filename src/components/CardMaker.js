@@ -154,7 +154,6 @@ componentDidMount(){
 
 componentDidUpdate(){
   localStorage.setItem('data', JSON.stringify(this.state.userInfo));
-
 }
 
 fetchCardData(){
