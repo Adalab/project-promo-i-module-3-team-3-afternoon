@@ -8,7 +8,6 @@ import defaultImage from "./DefaultImage";
 import CollapseList from "./CollapseList";
 import {fetchCardData} from '../services/CardFetch';
 
-
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
@@ -66,7 +65,7 @@ class CardMaker extends React.Component {
           [inputName]: inputValue,
         },
       };
-    },()=>this.validateForm());
+    },() => this.validateForm());
   }
   
   validateForm(){
