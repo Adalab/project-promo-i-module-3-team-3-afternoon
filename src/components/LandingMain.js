@@ -13,7 +13,6 @@ class LandingMain extends React.Component {
             title="logo awesome profile-cards"
           />
         </header>
-
         <main className="main">
           <h1 className="main__title"> Crea tu tarjeta de visita </h1>
           <p className="main__content">
