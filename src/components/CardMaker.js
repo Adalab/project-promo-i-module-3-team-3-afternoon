@@ -185,40 +185,41 @@ setURL(result){
 
 
   render() { 
+    const {activePanel, userInfo, profile, isAvatarDefault, isValidated, cardURL, isLoading, cardSuccess} = this.state;
     return (
       <div className="wrapper">
         <Header image={logo} />
         <div className="cardWrapper">
           <Preview
-            userName={this.state.userInfo.name}
-            position={this.state.userInfo.job}
+            userName={userInfo.name}
+            position={userInfo.job}
             paletteValue=""
-            email={this.state.userInfo.email}
-            phone={this.state.userInfo.phone}
-            linkedin={this.state.userInfo.linkedin}
-            github={this.state.userInfo.github}
-            avatar={this.state.profile.avatar}
+            email={userInfo.email}
+            phone={userInfo.phone}
+            linkedin={userInfo.linkedin}
+            github={userInfo.github}
+            avatar={profile.avatar}
             resetForm={this.resetForm}
-            palette={this.state.userInfo.palette}
+            palette={userInfo.palette}
           />
           <section className="containerSectionStyles">
             <CollapseList
               handleCollapse={this.handleCollapse}
-              activePanel={this.state.activePanel}
+              activePanel={activePanel}
               handleRadioChange={this.handleRadioChange}
               handleInputValue={this.handleInputValue}
-              palette={this.state.userInfo.palette}
-              avatar={this.state.profile.avatar} 
-              isAvatarDefault={this.state.isAvatarDefault} 
+              palette={userInfo.palette}
+              avatar={profile.avatar} 
+              isAvatarDefault={isAvatarDefault} 
               updateAvatar={this.updateAvatar} 
               handleInputValue = {this.handleInputValue}
               validateForm = {this.validateForm}
-              isValidated = {this.state.isValidated}
-              cardURL={this.state.cardURL}
+              isValidated = {isValidated}
+              cardURL={cardURL}
               fetchCardData={this.fetchCardData}
-              cardSuccess={this.state.cardSuccess}
-              isLoading={this.state.isLoading}
-              userInfo={this.state.userInfo}
+              cardSuccess={cardSuccess}
+              isLoading={isLoading}
+              userInfo={userInfo}
             />
           </section>
         </div>

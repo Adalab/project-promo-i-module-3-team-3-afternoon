@@ -20,7 +20,6 @@ class App extends React.Component {
         github:''
       },
       paletteChecked:'',
-      // isSubmitted: false,
       isValidated:false
     }
   }
@@ -61,27 +60,28 @@ class App extends React.Component {
   }
 ​
   render() {
+    const {userInfo, paletteChecked, isValidated } = this.state;
     console.log(this.state.userInfo);
     return (
       <div className="App">
         <Form 
           fileInput={this.fileInput}
-          name={this.state.userInfo.name}
-          job={this.state.userInfo.job}
-          phone={this.state.userInfo.phone}
-          email={this.state.userInfo.email}
-          linkedin={this.state.userInfo.linkedin}
-          github={this.state.userInfo.github}
+          name={userInfo.name}
+          job={userInfo.job}
+          phone={userInfo.phone}
+          email={userInfo.email}
+          linkedin={userInfo.linkedin}
+          github={userInfo.github}
           // renderData = {this.renderData}
           handleInputValue = {this.handleInputValue}
-          checked = {this.state.paletteChecked}
+          checked = {paletteChecked}
           // isValidated = {this.state.isValidated}
         />
         {/* {this.state.isSubmitted ?  */}
           <Info 
-            colorPalette={this.state.paletteChecked}
-            firstName={this.state.userInfo.name}
-            lastName={this.state.userInfo.job}
+            colorPalette={paletteChecked}
+            firstName={userInfo.name}
+            lastName={userInfo.job}
           />
           {/* :
           'no hay datos'
