@@ -21,7 +21,3 @@
 @mixin forPc { 
     @media all and (min-width: $pc) { @content;}
 }
-  
-
-
-
