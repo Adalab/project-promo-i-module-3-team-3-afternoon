@@ -215,7 +215,7 @@ setDarkMode() {
             />
           </section>
         </div>
-        <Footer image={logoAdalab}/>
+        <Footer image={logoAdalab} darkMode={this.state.darkMode}/>
       </div>
     );
   }

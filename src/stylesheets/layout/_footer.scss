@@ -12,6 +12,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        &.dark{
+            background-color: black;
+          color: white;
+          }
+          &.ligth{
+            background-color: white;
+          color: black;
+          }
         
         @include forTablet {
             padding: 10px 40px;
