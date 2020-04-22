@@ -33,7 +33,6 @@
     }
 
     .iconDirection {
-        // padding-top: 27px;
         display: inline;
         color: $metalColor;
         font-size: 18px;
@@ -88,9 +87,7 @@
     }
 
     .color_selected {
-        // max-height: 0px;
         transition: max-height 0.5s;
-        // overflow: hidden;
         width: 100%;
         padding-top: 20px;
         display: flex;
@@ -177,8 +174,6 @@
 // PARTE RELLENA //
 
 .containerFillInTop {
-    // display: flex;
-    // flex-direction: row;
     justify-content: space-between;
     font-family: $primaryFont;
     color: $metalColor;
@@ -190,9 +185,7 @@
 }
 
 .containerFillInBottom {
-    // max-height: 0px;
     transition: max-height 0.5s;
-    // overflow: hidden;
     width: 100%;
 
     .nameCard {
