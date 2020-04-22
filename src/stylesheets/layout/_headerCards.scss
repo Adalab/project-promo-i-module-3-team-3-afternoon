@@ -6,7 +6,14 @@
     display: flex;
     justify-content: left;
     align-items: center;
-
+      &.dark{
+        background-color: black;
+      color: white;
+      }
+      &.ligth{
+        background-color: white;
+      color: black;
+      }
       .logoCards {
         width: 201px;
     }

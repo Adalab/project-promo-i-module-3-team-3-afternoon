@@ -7,8 +7,10 @@ const Preview = props => {
                 
               <section className="preview">
     <div className="card_container">
-
+        <div className="button-container">
         <button id="reset" className="buttonReset" onClick={props.resetForm}> <i className="far fa-trash-alt"></i> reset</button>
+        <button id="nigth-mode" className="nightMode" onClick={props.setDarkMode}> <i className="fas fa-moon"></i> dark mode</button>
+        </div>
 
         <div className="card" id="cardid" >
             <div className={`headline ${props.palette}`}>

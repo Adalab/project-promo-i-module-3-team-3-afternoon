@@ -21,6 +21,7 @@ class CardMaker extends React.Component {
     this.resetForm = this.resetForm.bind(this);
     this.fetchCardData = this.fetchCardData.bind(this);
     this.setURL = this.setURL.bind(this);
+    this.setDarkMode = this.setDarkMode.bind(this);
     this.state = {
       activePanel: "",
       
@@ -42,7 +43,7 @@ class CardMaker extends React.Component {
       cardURL: '',
       isLoading: false,
       cardSuccess: '',
-      
+      darkMode: false
     };
   }
 
@@ -146,10 +147,8 @@ componentDidMount(){
     if  ((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
       this.setState({isValidated: true})
 
-    }
-    }
-  }
-      
+    }}}
+     
 
 
 componentDidUpdate(){
@@ -182,13 +181,19 @@ setURL(result){
       })
   }
 }
+setDarkMode() {
+  {this.setState((prevState) => {
+    return {
+      darkMode: !prevState.darkMode
 
+}})}
+}
 
   render() { 
     return (
       <div className="wrapper">
-        <Header image={logo} />
-        <div className="cardWrapper">
+        <Header image={logo} darkMode={this.state.darkMode}/>
+        <div className={`cardWrapper ${this.state.darkMode === true ? "dark" : "light"}`}>
           <Preview
             userName={this.state.userInfo.name}
             position={this.state.userInfo.job}
@@ -199,6 +204,8 @@ setURL(result){
             github={this.state.userInfo.github}
             avatar={this.state.profile.avatar}
             resetForm={this.resetForm}
+            setDarkMode={this.setDarkMode}
+            darkMode={this.state.darkMode}
             palette={this.state.userInfo.palette}
           />
           <section className="containerSectionStyles">
