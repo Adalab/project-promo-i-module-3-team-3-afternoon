@@ -8,7 +8,6 @@ import defaultImage from "./DefaultImage";
 import CollapseList from "./CollapseList";
 import {fetchCardData} from '../services/CardFetch';
 
-
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +23,6 @@ class CardMaker extends React.Component {
     this.setDarkMode = this.setDarkMode.bind(this);
     this.state = {
       activePanel: "",
-      
       userInfo: {
         palette: "palette1",
         name: "",
@@ -48,7 +46,6 @@ class CardMaker extends React.Component {
   }
 
   handleCollapse(targetId) {
-    console.log(targetId);
     if (targetId !== this.state.activePanel) {
       this.setState({ activePanel: targetId });
     } else {
@@ -70,15 +67,11 @@ class CardMaker extends React.Component {
           [inputName]: inputValue,
         },
       };
-    }, ()=>this.validateForm());
-    console.log(this.state.userInfo);
+    },() => this.validateForm());
   }
   
-  
   validateForm(){
-  
     const { name, job, phone, email,linkedin,github } = this.state.userInfo;
-    
     const isValidatedValue = (name.length > 0) && (job.length > 0) && (phone.length > 0) && (email.length > 0) && (linkedin.length > 0) && (github.length > 0);
     this.setState({isValidated:isValidatedValue})
   }
@@ -98,89 +91,81 @@ class CardMaker extends React.Component {
   };
 
   resetForm(){
-    this.setState({
-        
-        userInfo: {
-          palette: "palette1",
-          name: "",
-          job: "",
-          phone: "",
-          email: "",
-          linkedin: "",
-          github: "",
-          photo: defaultImage
-        },
-        
-        profile: {
-          avatar: defaultImage
-        },
-  
-        isAvatarDefault: true,
-        isValidated: false
-        
+    this.setState ({
+      userInfo: {
+        palette: "palette1",
+        name: "",
+        job: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
+        photo: defaultImage
+      },
+      profile: {
+        avatar: defaultImage
+      },
+      isAvatarDefault: true,
+      isValidated: false    
     })
-}
-componentDidMount(){
-  const data = JSON.parse(localStorage.getItem('data'));
-
-  if(data !== null){
+  }
+  componentDidMount(){
+    const data = JSON.parse(localStorage.getItem('data'));
+    if(data !== null){
       this.setState({
-          userInfo: {
-              "palette": data.palette !=='' ? data.palette : '1',
-              "name": data.name,
-              "job": data.job,
-              "phone": data.phone,
-              "email": data.email,
-              "linkedin": data.linkedin,
-              "github": data.github,
-              "photo": data.photo !== '' ? data.photo : defaultImage
-          },
-          profile: {
-              avatar: data.photo
-          },
-          isAvatarDefault: data.photo !== defaultImage ? false : true,
-          cardURL: '',
-         
+        userInfo: {
+          "palette": data.palette !=='' ? data.palette : '1',
+          "name": data.name,
+          "job": data.job,
+          "phone": data.phone,
+          "email": data.email,
+          "linkedin": data.linkedin,
+          "github": data.github,
+          "photo": data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+        cardURL: '',
       })
     } 
     if(data !== null){
-    if  ((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
-      this.setState({isValidated: true})
+      if((data.name.length > 0) && (data.job.length > 0) && (data.phone.length > 0) && (data.email.length > 0) && (data.linkedin.length > 0) && (data.github.length > 0)) {
+        this.setState({isValidated: true})
+      }
+    }
+  }
 
-    }}}
-     
+  componentDidUpdate(){
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
 
-
-componentDidUpdate(){
-  localStorage.setItem('data', JSON.stringify(this.state.userInfo));
-
-}
-
-fetchCardData(){
-  const json = JSON.parse(localStorage.getItem('data'));
-  fetchCardData(json)
-  .then(result => this.setURL(result))
-  .catch(error => console.log(error));
-
-  this.setState({
+  fetchCardData(){
+    const json = JSON.parse(localStorage.getItem('data'));
+    fetchCardData(json)
+    .then(result => this.setURL(result))
+    .catch(error => console.log(error));
+    this.setState({
       isLoading: true
-  })
-}
+    })
+  }
 
-setURL(result){
-  if(result.success){
+  setURL(result){
+    if(result.success){
       this.setState({
-          cardURL: result.cardURL,
-          isLoading: false,
-          cardSuccess: true
+        cardURL: result.cardURL,
+        isLoading: false,
+        cardSuccess: true
       })
-  } else {
-      this.setState({
+    } else {
+        this.setState({
           cardURL: 'ERROR:' + result.error,
           isLoading: false
-      })
+        })
+    }
   }
-}
+
 setDarkMode() {
   {this.setState((prevState) => {
     return {
@@ -190,42 +175,43 @@ setDarkMode() {
 }
 
   render() { 
+    const {activePanel, userInfo, profile, isAvatarDefault, isValidated, cardURL, isLoading, cardSuccess} = this.state;
     return (
       <div className="wrapper">
         <Header image={logo} darkMode={this.state.darkMode}/>
         <div className={`cardWrapper ${this.state.darkMode === true ? "dark" : "light"}`}>
           <Preview
-            userName={this.state.userInfo.name}
-            position={this.state.userInfo.job}
+            userName={userInfo.name}
+            position={userInfo.job}
             paletteValue=""
-            email={this.state.userInfo.email}
-            phone={this.state.userInfo.phone}
-            linkedin={this.state.userInfo.linkedin}
-            github={this.state.userInfo.github}
-            avatar={this.state.profile.avatar}
+            email={userInfo.email}
+            phone={userInfo.phone}
+            linkedin={userInfo.linkedin}
+            github={userInfo.github}
+            avatar={profile.avatar}
             resetForm={this.resetForm}
             setDarkMode={this.setDarkMode}
             darkMode={this.state.darkMode}
-            palette={this.state.userInfo.palette}
+            palette={userInfo.palette}
           />
           <section className="containerSectionStyles">
             <CollapseList
               handleCollapse={this.handleCollapse}
-              activePanel={this.state.activePanel}
+              activePanel={activePanel}
               handleRadioChange={this.handleRadioChange}
               handleInputValue={this.handleInputValue}
-              palette={this.state.userInfo.palette}
-              avatar={this.state.profile.avatar} 
-              isAvatarDefault={this.state.isAvatarDefault} 
+              palette={userInfo.palette}
+              avatar={profile.avatar} 
+              isAvatarDefault={isAvatarDefault} 
               updateAvatar={this.updateAvatar} 
               handleInputValue = {this.handleInputValue}
               validateForm = {this.validateForm}
-              isValidated = {this.state.isValidated}
-              cardURL={this.state.cardURL}
+              isValidated = {isValidated}
+              cardURL={cardURL}
               fetchCardData={this.fetchCardData}
-              cardSuccess={this.state.cardSuccess}
-              isLoading={this.state.isLoading}
-              userInfo={this.state.userInfo}
+              cardSuccess={cardSuccess}
+              isLoading={isLoading}
+              userInfo={userInfo}
             />
           </section>
         </div>

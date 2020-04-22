@@ -32,7 +32,6 @@ const CollapseList = props => {
           isAvatarDefault={props.isAvatarDefault} 
           updateAvatar={props.updateAvatar}
           userInfo={props.userInfo}
-        
         />
       </CollapseItem>
       <CollapseItem
@@ -50,8 +49,7 @@ const CollapseList = props => {
         fetchCardData={props.fetchCardData}
         cardSuccess={props.cardSuccess}
         isLoading={props.isLoading}
-        
-              />
+        />
       </CollapseItem>
     </div>
   );

@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 const FormInput = (props) => {
   const updateInputValue = (evt) => {
     props.handleInputValue(evt.currentTarget.name,evt.currentTarget.value)
-    
   }
-
   return (
     <div className={props.section}>
       <label htmlFor={props.name} className={props.name}>
