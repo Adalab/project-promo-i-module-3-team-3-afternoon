@@ -1,31 +1,26 @@
-  .palette1{
-    border-left: solid 5px $bottonColor !important;
+.palette1 {
+  border-left: solid 5px $bottonColor !important;
 
-    h2 {
-      color: $headerColor ;
-    }
+  h2 {
+    color: $headerColor;
   }
+}
 
+.palette2 {
+  border-left: solid 5px $secondPalette !important;
 
-
-  .palette2 {
-    border-left: solid 5px $secondPalette !important;
-
-    h2 {
-      color: $secondPaletteText;
-    }
+  h2 {
+    color: $secondPaletteText;
   }
+}
 
+.palette3 {
+  border-left: solid 5px $thirdPalette !important;
 
-
-  .palette3 {
-    border-left: solid 5px $thirdPalette !important;
-
-    h2 {
-      color: $thirdPaletteText;
-    }
+  h2 {
+    color: $thirdPaletteText;
   }
-
+}
 
 .coloricon1 {
   .btn {

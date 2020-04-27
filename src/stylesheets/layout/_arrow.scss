@@ -1,12 +1,11 @@
 .action {
-    max-height: 700px !important;
+  max-height: 700px !important;
 }
 
 .arrow-rotate {
-    transform: rotate(180deg);
-    
-    &:hover {
-       color: $primaryColor;
-    }
-    
+  transform: rotate(180deg);
+
+  &:hover {
+    color: $primaryColor;
+  }
 }

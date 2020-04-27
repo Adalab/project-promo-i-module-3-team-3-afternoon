@@ -7,12 +7,12 @@
     justify-content: left;
     align-items: center;
       &.dark{
-        background-color: black;
-      color: white;
+        background-color: $mainColor;
+      color: $whiteColor;
       }
       &.ligth{
-        background-color: white;
-      color: black;
+        background-color: $whiteColor;
+      color: $mainColor;
       }
       .logoCards {
         width: 201px;

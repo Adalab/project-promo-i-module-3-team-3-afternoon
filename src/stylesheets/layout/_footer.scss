@@ -1,53 +1,58 @@
- footer {
-    font-size: 16px;
-    
+footer {
+  font-size: 16px;
+
+  @include forTablet {
+    height: 85px;
+  }
+  .footer-wrapper {
+    background-color: $whiteColor;
+    border-top: solid 1px $colorFooterBorder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.dark {
+      background-color: $mainColor;
+      color: $whiteColor;
+    }
+    &.ligth {
+      background-color: $whiteColor;
+      color: $mainColor;
+    }
 
     @include forTablet {
-    height: 85px;
+      padding: 10px 40px;
+      flex-direction: row;
+      justify-content: space-between;
     }
-    .footer-wrapper {
-        background-color: $whiteColor;
-        border-top: solid 1px $colorFooterBorder;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        &.dark{
-            background-color: black;
-          color: white;
-          }
-          &.ligth{
-            background-color: white;
-          color: black;
-          }
-        
-        @include forTablet {
-            padding: 10px 40px;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .copyright {
-            color: $colorFooterText;
-            font-family: $primaryFont;
-            line-height: 1.43;
-            font-size: 0.875rem;
-            margin-top: 18px;
-            .first-letter {
-                text-transform: capitalize;
-            }
-            @include forTablet {
-                margin-top: 0px;
-            }
-        }
-        .img-container {
-            height: 2.5rem;
-            margin: 0.75rem;
-            a {
-                padding: 10px;
-                img {
-                    max-height: 100%;
-                }
-            }
-        }
+    .copyright {
+      color: $colorFooterText;
+      font-family: $primaryFont;
+      line-height: 1.43;
+      font-size: 0.875rem;
+      margin-top: 18px;
+      &.dark {
+        color: $whiteColor;
+      }
+      &.ligth {
+        color: $primaryColor;
+      }
+      .first-letter {
+        text-transform: capitalize;
+      }
+      @include forTablet {
+        margin-top: 0px;
+      }
     }
+    .img-container {
+      height: 2.5rem;
+      margin: 0.75rem;
+      a {
+        padding: 10px;
+        img {
+          max-height: 100%;
+        }
+      }
+    }
+  }
 }
