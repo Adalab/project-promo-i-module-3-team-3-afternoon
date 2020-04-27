@@ -17,6 +17,7 @@ const FormFill = props => {
           value={props.userInfo.name}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
          
           
         />
@@ -31,6 +32,8 @@ const FormFill = props => {
           value={props.userInfo.job}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
+         
         
         />
 
@@ -54,6 +57,8 @@ const FormFill = props => {
           value={props.userInfo.email}
           requiredMessage="Completa los campos obligatorios*"
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
+         
         
         />
 
@@ -67,6 +72,8 @@ const FormFill = props => {
           name="phone"
           value={props.userInfo.phone}
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
+         
          
         />
         <FormInput
@@ -79,6 +86,8 @@ const FormFill = props => {
           name="linkedin"
           value={props.userInfo.linkedin}
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
+         
     
         />
 
@@ -92,6 +101,8 @@ const FormFill = props => {
           name="github"
           value={props.userInfo.github}
           handleInputValue={props.handleInputValue}
+          darkMode = {props.darkMode}
+         
          
         />
       </form>

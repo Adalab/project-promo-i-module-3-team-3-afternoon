@@ -212,6 +212,7 @@ setDarkMode() {
               cardSuccess={cardSuccess}
               isLoading={isLoading}
               userInfo={userInfo}
+              darkMode={this.state.darkMode}
             />
           </section>
         </div>

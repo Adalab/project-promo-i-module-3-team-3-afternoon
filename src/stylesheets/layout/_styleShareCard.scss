@@ -24,6 +24,14 @@
         font-size: rem(12);
         color: $primaryColor;
         margin: 5px 0 20px 0;
+        &.dark{
+                    
+            color: white;
+            }
+            &.ligth{
+              
+              color: $primaryColor;
+            }
         
     }
 }

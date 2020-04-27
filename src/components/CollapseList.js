@@ -13,10 +13,12 @@ const CollapseList = props => {
         id="collapse-1"
         title="DISEÑA"
         icon="far fa-object-ungroup"
+        darkMode={props.darkMode}
       >
         <Design
           handleRadioChange={props.handleRadioChange}
           palette={props.palette}
+          darkMode={props.darkMode}
         />
       </CollapseItem>
       <CollapseItem
@@ -25,6 +27,7 @@ const CollapseList = props => {
         id="collapse-2"
         title="RELLENA"
         icon="far fa-keyboard"
+        darkMode={props.darkMode}
       >
         <FormFill
           handleInputValue={props.handleInputValue}
@@ -32,6 +35,7 @@ const CollapseList = props => {
           isAvatarDefault={props.isAvatarDefault} 
           updateAvatar={props.updateAvatar}
           userInfo={props.userInfo}
+          darkMode={props.darkMode}
         />
       </CollapseItem>
       <CollapseItem
@@ -40,6 +44,7 @@ const CollapseList = props => {
         id="collapse-3"
         title="COMPARTE"
         icon="fas fa-share-alt"
+        darkMode={props.darkMode}
       >
         <Share 
         handleInputValue = {props.handleInputValue}  
@@ -49,6 +54,7 @@ const CollapseList = props => {
         fetchCardData={props.fetchCardData}
         cardSuccess={props.cardSuccess}
         isLoading={props.isLoading}
+        darkMode={props.darkMode}
         />
       </CollapseItem>
     </div>

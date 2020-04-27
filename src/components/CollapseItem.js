@@ -9,7 +9,7 @@ const CollapseItem = (props) => {
       <header className="subContainer" id={props.id} onClick={displayPanel} >
         <span>
           <i className={`icon ${props.icon}`}></i>
-          <span className="title">{props.title}</span>
+          <span className={`title ${props.darkMode === true ? "dark" : "light"}`}>{props.title}</span>
         </span>
           <i className={`iconDirection2 fas fa-chevron-down ${props.activePanel === props.id ? "arrow-rotate": ""}`}></i>
       </header>

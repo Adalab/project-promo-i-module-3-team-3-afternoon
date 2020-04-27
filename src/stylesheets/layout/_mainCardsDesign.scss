@@ -24,12 +24,22 @@
         width: 40%;
         
     }
+    
+    
 
     .title {
         padding-left: 10px;
         display:inline;
         @include primaryBoldFont;
         color: $metalColor;
+        &.dark{
+            
+          color: white;
+          }
+          &.ligth{
+            
+            color: $metalColor;
+          }
     }
 
     .iconDirection {
@@ -99,6 +109,7 @@
             font-size: 14px;
             font-family: $primaryFont;
             font-weight: 200;
+            
 
         }
 
@@ -256,6 +267,8 @@
             color: #114e4e;
             padding-bottom: 7px;
             padding-top: 20px;
+            
+            
         }
 
         .profession-input {
@@ -301,6 +314,8 @@
             color: #c5c5c5;
         }
     }
+
+    
 
     .addImage {
         
@@ -509,6 +524,17 @@
         }
     }
 
+    .label{
+        &.dark{
+            
+            color: white;
+            }
+            &.ligth{
+              
+              color: #114e4e;
+            }
+    }
+
     .githubCard {
         display: flex;
         flex-direction: column;
@@ -567,6 +593,16 @@
         }
 
 
+    }
+    .label{
+        &.dark{
+            
+            color: white;
+            }
+            &.ligth{
+              
+              color: #114e4e;
+            }
     }
 }
 
@@ -630,3 +666,4 @@
     
 }
 }
+

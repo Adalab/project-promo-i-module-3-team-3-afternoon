@@ -8,7 +8,7 @@ const Design = props => {
   }
   return (
     <div className="color_selected">
-      <p className="title special">COLORES</p>
+      <p className={`title special ${props.darkMode === true ? "dark" : "light"}`}>COLORES</p>
         <ul>
           <li>
             <input

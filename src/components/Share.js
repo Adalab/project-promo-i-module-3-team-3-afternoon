@@ -23,7 +23,7 @@ class Share extends React.Component {
                 </button>
                 <div className={`card-loader ${this.props.isLoading === true ? '' : ' hidden'}`}><img className="card-loader__loading" alt="loading" src={Loading}/></div>
                 <div className={`card__share ${this.props.cardSuccess === true ? '' : ' hidden'}`} id="card-share">
-                    <p id="card-link" className="p.card__link">La tarjeta ha sido creada:</p>
+                    <p id="card-link" className={`p.card__link ${this.props.darkMode === true ? "dark" : "light"}`}>La tarjeta ha sido creada:</p>
                     <a href={this.props.cardURL} target="_blank"><p className="card__link">{this.props.cardURL}</p></a>       
                     <a href={`https://twitter.com/intent/tweet?text=He%20creado%20esta%20tarjeta%20tan%20GUAY%20con%20Awesome%20Profile%20Cards:%0A;hashtags=Adalab, Migración AwesomeProfileCards, promo Idelisa Equipo 3 ${this.props.cardURL}`} target="_blank" id="twitter-share" className="button-twitter"><i className="fab fa-twitter"></i>Compartir en Twitter</a>
                    

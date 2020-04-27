@@ -7,7 +7,7 @@ const FormInput = (props) => {
   }
   return (
     <div className={props.section}>
-      <label htmlFor={props.name} className={props.name}>
+      <label htmlFor={props.name} className={`${props.name} label ${props.darkMode === true ? "dark" : "light"}`}>
         {props.labelName}
         <span className="inputRequired">*</span>
       </label>
