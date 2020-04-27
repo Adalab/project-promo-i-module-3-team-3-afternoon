@@ -1,37 +1,36 @@
 .inputRequired {
-    color: $primaryColor;
+  color: $primaryColor;
 }
 
 //CLASES ERROR INPUTS FORM
 
 .errorBorder {
-    border: 2px solid $primaryColor !important;
+  border: 2px solid $primaryColor !important;
 }
 
 .input-error-message {
-    font-size: 10px;
-    color: $primaryColor;
-    padding-top: 2px;
+  font-size: 10px;
+  color: $primaryColor;
+  padding-top: 2px;
 }
 
 .hiddenInputMessage {
-    display: none;
+  display: none;
 }
 
 //CLASES ERROR BUTTON
 #error-message {
-    padding-top: 15px;
-    font-size: 12px;
-    color: $primaryColor;
-    text-align: center;
+  padding-top: 15px;
+  font-size: 12px;
+  color: $primaryColor;
+  text-align: center;
 }
 
 .hiddenMessage {
-    display: none;
+  display: none;
 }
 
 .buttonDisabled {
-    background-color: grey !important;
-    opacity: 0.4 !important;
+  background-color: grey !important;
+  opacity: 0.4 !important;
 }
-
