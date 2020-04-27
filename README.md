@@ -14,7 +14,7 @@ Celia Gutiérrez      ||  :octocat: https://github.com/celiagmar
 Gádor Villanueva     ||  :octocat: https://github.com/gavimar     
  
 
-## Objetivos
+## Objetivos  :dart:
 
 1.  Lidiar con código heredado y ser capaces de refactorizarlo. 🤯
     
@@ -40,6 +40,7 @@ Necesitarás instalar  📋 [Node.js](https://nodejs.org/) para trabajar con est
 $ git clone https://github.com/Adalab/project-promo-i-module-3-team-3-afternoon
 ```
 2. Abre el proyecto en tu editor de codigo (Visual Sudio Code, Atom, Brackets...)
+
 3. Instala las dependencias locales
 ```sh
 $ npm install
@@ -50,7 +51,7 @@ $ npm start
 ```
 ## Especificaciones  :scroll:
 
-- Uso avanzado de HTML5
+- Uso avanzado de HTML5  :heavy_check_mark:
 - Maquetación usando SASS, incluyendo flex :heavy_check_mark:
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo usando la estrategia mobile first :heavy_check_mark:
 - Acceso y envío de datos a un servidor :heavy_check_mark:
@@ -62,11 +63,11 @@ $ npm start
 
 ### Scrum
 
-- Para la realización de este proyecto trabajamos en 2 sprints de 7 sesiones cada uno.
-- Dedicamos el primer día a la planificación del sprint y el resto a trabajar en el desarrollo del proyecto. 
+- Para la realización de este proyecto trabajamos en 2 sprints de 7 sesiones cada uno. :v:
+- Dedicamos el primer día a la planificación del sprint y el resto a trabajar en el desarrollo del proyecto. ♟️
 - En el primer sprint hemos contado con Gádor como Scrum Master y con Eli en el segundo sprint. Ambas se han ocupado de organizar las dailys, convocar reuniones extraordinarias y  se han preocupado de que todo fuese bien.  🧘🏻‍♀️
-- Hemos realizado dailys para estar todo el equipo actualizado y para determinar el siguiente paso a seguir. Hemos mantenido una comunicación constante a través de diferentes herramientas. 
-- Al final de cada sprint hicimos una demo para presentar los resultados conseguidos, y una retrospectiva (retro) para evaluar nuestro trabajo en equipo y mejorar en el siguiente sprint.
+- Hemos realizado dailys para estar todo el equipo actualizado y para determinar el siguiente paso a seguir. Hemos mantenido una comunicación constante a través de diferentes herramientas. 🌇
+- Al final de cada sprint hicimos una demo para presentar los resultados conseguidos, y una retrospectiva (retro) para evaluar nuestro trabajo en equipo y mejorar en el siguiente sprint. 👩‍🏫
 
 
 ## Estructura
@@ -123,9 +124,9 @@ La estructura de carpetas es la siguiente:
 ```
 
    
-## Agradecimientos 🏅 
+## Agradecimientos  :loudspeaker:
 
-ADALAB 🏫[https://adalab.es/] 
+ADALAB [https://adalab.es/] 
 
 ![Adalab](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZZ7_HREMZMUMXiWrCj%2F-LZZ7xHB1bnkIxUrw_Yx%2F-LZZ83Upae8RuHPxHpB8%2Fadalab_brand.png?generation=1551089555419087&alt=media)
 
