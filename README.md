@@ -7,7 +7,7 @@
  
 ## Integrantes 
 
-Eli Alkorta          ||  :octocat: https://github.com/eli-alkorta
+Eli Alkorta          ||  :octocat: https://github.com/eli-alkorta    
 Ana Cortés           ||  :octocat: https://github.com/cortesana  
 Ana Belén Ferreira   ||  :octocat: https://github.com/    
 Celia Gutiérrez      ||  :octocat: https://github.com/celiagmar   
@@ -73,6 +73,7 @@ $ npm start
 
 La estructura de carpetas es la siguiente:
 
+```
 /
 `- _src
    |- components
@@ -119,6 +120,8 @@ La estructura de carpetas es la siguiente:
 `- package.json
 `- README.md
  
+```
+
    
 ## Agradecimientos 🏅 
 
