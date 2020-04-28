@@ -126,7 +126,7 @@ La estructura de carpetas es la siguiente:
    
 ## Agradecimientos  :loudspeaker:
 
-ADALAB [https://adalab.es/] 
+ADALAB https://adalab.es/
 
 ![Adalab](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZZ7_HREMZMUMXiWrCj%2F-LZZ7xHB1bnkIxUrw_Yx%2F-LZZ83Upae8RuHPxHpB8%2Fadalab_brand.png?generation=1551089555419087&alt=media)
 
